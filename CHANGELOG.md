@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.0.2-alpha] - 2022-04-20
 
 ### Added
+- Add Enums and implemented service CrmHTTPRouteBuilder to request C primitives
 
 ### Changed
 
