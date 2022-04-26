@@ -1,6 +1,6 @@
 package br.com.senior.crm.http.camel.utils.enums;
 
-public enum Service
+public enum ServiceEnum
 {
     ACCOUNT("account"),
     OPPORTUNITY("opportunity"),
@@ -12,7 +12,7 @@ public enum Service
         return path;
     }
 
-    Service(String path) {
+    ServiceEnum(String path) {
         this.path = path;
     }
 }

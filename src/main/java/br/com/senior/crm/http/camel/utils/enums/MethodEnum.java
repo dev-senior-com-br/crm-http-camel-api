@@ -1,6 +1,6 @@
 package br.com.senior.crm.http.camel.utils.enums;
 
-public enum Method {
+public enum MethodEnum {
 
     POST("post"),
     PUT("put"),
@@ -13,7 +13,7 @@ public enum Method {
         return path;
     }
 
-    Method(String path) {
+    MethodEnum(String path) {
         this.path = path;
     }
 }

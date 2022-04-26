@@ -1,8 +1,8 @@
 package br.com.senior.crm.http.camel.services;
 
-import br.com.senior.crm.http.camel.utils.enums.Method;
-import br.com.senior.crm.http.camel.utils.enums.Primitive;
-import br.com.senior.crm.http.camel.utils.enums.Service;
+import br.com.senior.crm.http.camel.utils.enums.MethodEnum;
+import br.com.senior.crm.http.camel.utils.enums.PrimitiveEnum;
+import br.com.senior.crm.http.camel.utils.enums.ServiceEnum;
 import br.com.senior.seniorx.http.camel.PrimitiveType;
 import br.com.senior.seniorx.http.camel.SeniorXHTTPRouteBuilder;
 import org.apache.camel.builder.RouteBuilder;
@@ -11,7 +11,7 @@ public class CrmHTTPRouteBuilder extends SeniorXHTTPRouteBuilder {
 
     public static String DOMAIN = "crm";
 
-    public CrmHTTPRouteBuilder(RouteBuilder builder, Service service, PrimitiveType primitiveType, Primitive primitive, Method method)
+    public CrmHTTPRouteBuilder(RouteBuilder builder, ServiceEnum service, PrimitiveType primitiveType, PrimitiveEnum primitive, MethodEnum method)
     {
         super(builder);
 

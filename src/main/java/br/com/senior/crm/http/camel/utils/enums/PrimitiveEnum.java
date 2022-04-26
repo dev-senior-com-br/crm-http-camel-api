@@ -1,6 +1,6 @@
 package br.com.senior.crm.http.camel.utils.enums;
 
-public enum Primitive
+public enum PrimitiveEnum
 {
     // Account
     ACCOUNT("account"),
@@ -19,7 +19,7 @@ public enum Primitive
         return path;
     }
 
-    Primitive(String path) {
+    PrimitiveEnum(String path) {
         this.path = path;
     }
 }
