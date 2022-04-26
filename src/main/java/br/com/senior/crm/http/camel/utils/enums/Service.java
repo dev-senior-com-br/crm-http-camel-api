@@ -1,4 +1,4 @@
-package br.com.senior.crm.http.camel.Utils.Enums;
+package br.com.senior.crm.http.camel.utils.enums;
 
 public enum Service
 {
@@ -6,7 +6,11 @@ public enum Service
     OPPORTUNITY("opportunity"),
     BASE_RECORDS("basic_records");
 
-    public String path;
+    private String path;
+
+    public String getPath() {
+        return path;
+    }
 
     Service(String path) {
         this.path = path;

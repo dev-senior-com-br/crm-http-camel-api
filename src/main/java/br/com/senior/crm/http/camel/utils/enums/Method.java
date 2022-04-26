@@ -1,4 +1,4 @@
-package br.com.senior.crm.http.camel.Utils.Enums;
+package br.com.senior.crm.http.camel.utils.enums;
 
 public enum Method {
 
@@ -7,7 +7,11 @@ public enum Method {
     GET("get"),
     DELETE("delete");
 
-    public String path;
+    private String path;
+
+    public String getPath() {
+        return path;
+    }
 
     Method(String path) {
         this.path = path;

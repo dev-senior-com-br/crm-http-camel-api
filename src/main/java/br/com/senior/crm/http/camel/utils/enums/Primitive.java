@@ -1,4 +1,4 @@
-package br.com.senior.crm.http.camel.Utils.Enums;
+package br.com.senior.crm.http.camel.utils.enums;
 
 public enum Primitive
 {
@@ -13,7 +13,11 @@ public enum Primitive
 
     ;
 
-    public String path;
+    private String path;
+
+    public String getPath() {
+        return path;
+    }
 
     Primitive(String path) {
         this.path = path;
