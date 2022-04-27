@@ -1,4 +1,4 @@
-package br.com.senior.crm.http.camel.services;
+package br.com.senior.crm.http.camel.services.impl;
 
 import br.com.senior.crm.http.camel.utils.enums.MethodEnum;
 import br.com.senior.crm.http.camel.utils.enums.PrimitiveEnum;

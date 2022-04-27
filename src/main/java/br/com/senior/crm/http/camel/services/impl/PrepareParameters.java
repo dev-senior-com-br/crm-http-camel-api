@@ -1,4 +1,4 @@
-package br.com.senior.crm.http.camel.services;
+package br.com.senior.crm.http.camel.services.impl;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Message;
