@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>br.com.senior</groupId>
     <artifactId>crm-http-camel-api</artifactId>
-    <version>0.0.6-alpha</version>
+    <version>0.0.7-alpha</version>
     <packaging>jar</packaging>
 
     <name>CRM HTTP Camel API</name>
@@ -34,6 +34,7 @@
 
         <seniorx-http-camel-api-version>1.1.0</seniorx-http-camel-api-version>
         <lombok-version>1.18.24</lombok-version>
+        <json-version>20201115</json-version>
     </properties>
 
     <issueManagement>
@@ -311,6 +312,11 @@
             <artifactId>lombok</artifactId>
             <version>${lombok-version}</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>${json-version}</version>
         </dependency>
     </dependencies>
 

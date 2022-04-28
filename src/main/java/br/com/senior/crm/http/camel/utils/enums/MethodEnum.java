@@ -1,5 +1,7 @@
 package br.com.senior.crm.http.camel.utils.enums;
 
+import lombok.Getter;
+
 public enum MethodEnum {
 
     POST("post"),
@@ -7,11 +9,8 @@ public enum MethodEnum {
     GET("get"),
     DELETE("delete");
 
+    @Getter
     private String path;
-
-    public String getPath() {
-        return path;
-    }
 
     MethodEnum(String path) {
         this.path = path;

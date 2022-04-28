@@ -1,5 +1,7 @@
 package br.com.senior.crm.http.camel.utils.enums;
 
+import lombok.Getter;
+
 public enum PrimitiveEnum
 {
     // Account
@@ -13,11 +15,8 @@ public enum PrimitiveEnum
 
     ;
 
+    @Getter
     private String path;
-
-    public String getPath() {
-        return path;
-    }
 
     PrimitiveEnum(String path) {
         this.path = path;

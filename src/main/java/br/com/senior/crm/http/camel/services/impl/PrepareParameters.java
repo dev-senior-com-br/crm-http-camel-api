@@ -2,6 +2,9 @@ package br.com.senior.crm.http.camel.services.impl;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Message;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.Base64;
 import java.util.List;
@@ -22,9 +25,39 @@ public class PrepareParameters
         });
     }
 
-    private static String decode(String valueEncoded)
+    private static Object decode(String valueEncoded)
     {
         byte[] valueDecoded = Base64.getDecoder().decode(valueEncoded);
-        return new String(valueDecoded);
+        String value = new String(valueDecoded);
+
+        if (isJsonObject(value)) {
+            return new JSONObject(value);
+        }
+
+        if (isJsonArray(value)) {
+            return new JSONArray(value);
+        }
+
+        return value;
+    }
+
+    private static boolean isJsonObject(String json) {
+        try {
+            new JSONObject(json);
+        } catch (JSONException ex) {
+            return false;
+        }
+        return true;
+    }
+
+    private static boolean isJsonArray(String json)
+    {
+        try {
+            new JSONArray(json);
+        } catch (JSONException ex1) {
+            return false;
+        }
+
+        return true;
     }
 }
