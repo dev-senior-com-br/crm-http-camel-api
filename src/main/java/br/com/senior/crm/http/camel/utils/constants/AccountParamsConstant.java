@@ -1,4 +1,4 @@
-package br.com.senior.crm.http.camel.utils.contants;
+package br.com.senior.crm.http.camel.utils.constants;
 
 import java.util.List;
 

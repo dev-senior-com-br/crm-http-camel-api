@@ -1,7 +1,7 @@
 package br.com.senior.crm.http.camel.services.impl;
 
 import br.com.senior.crm.http.camel.services.exception.AuthenticationException;
-import br.com.senior.crm.http.camel.utils.contants.HeadersConstants;
+import br.com.senior.crm.http.camel.utils.constants.HeadersConstants;
 import br.com.senior.seniorx.http.camel.authentication.AuthenticationAPI;
 import br.com.senior.seniorx.http.camel.authentication.LoginWithKeyInput;
 import lombok.Getter;
