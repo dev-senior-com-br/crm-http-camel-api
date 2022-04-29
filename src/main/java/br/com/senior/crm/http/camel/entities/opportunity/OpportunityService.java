@@ -55,7 +55,7 @@ public class OpportunityService extends ErrorResponseEntity {
      * Serviço
      */
     @JsonProperty("service")
-    public ServiceDTO service;
+    public ServiceDTO serviceDTO;
 
     /**
      * Quantidade do produto na proposta
