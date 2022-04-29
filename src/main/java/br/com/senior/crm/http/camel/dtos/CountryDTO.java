@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 import org.apache.camel.component.jackson.JacksonDataFormat;
 
 /**
- * Pais
+ * DTO do pais
  */
 @AllArgsConstructor
 @NoArgsConstructor

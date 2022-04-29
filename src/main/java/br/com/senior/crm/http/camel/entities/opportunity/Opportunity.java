@@ -87,7 +87,7 @@ public class Opportunity extends ErrorResponseEntity {
     /**
      * Responsável pela oportunidade
      */
-    @JsonProperty("responsable")
+    @JsonProperty("responsible")
     public ResponsibleDTO responsible;
 
     /**

@@ -25,7 +25,7 @@ public class ResponsibleDTO {
     /**
      * Código de identificação no CRM
      */
-    @JsonProperty("idErp")
+    @JsonProperty("id")
     public Long id;
 
     /**

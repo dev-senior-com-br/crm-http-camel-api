@@ -1,5 +1,7 @@
 package br.com.senior.crm.http.camel.dtos.enums;
 
+import lombok.Getter;
+
 /**
  * Operadora
  */

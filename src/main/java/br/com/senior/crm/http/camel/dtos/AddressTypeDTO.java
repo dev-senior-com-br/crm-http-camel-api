@@ -33,5 +33,4 @@ public class AddressTypeDTO {
      */
     @JsonProperty("name")
     public String name;
-
 }

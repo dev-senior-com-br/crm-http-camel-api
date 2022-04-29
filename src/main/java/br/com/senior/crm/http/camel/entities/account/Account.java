@@ -166,7 +166,7 @@ public class Account extends ErrorResponseEntity {
      * Status de atividade
      */
     @JsonProperty("active")
-    public Long active = 1L;
+    public Long active;
 
     /**
      * Campos customizados

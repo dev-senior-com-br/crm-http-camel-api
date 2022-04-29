@@ -31,12 +31,12 @@ public class ProposalDTO {
     /**
      * Número da proposta no CRM
      */
-    @JsonProperty("id")
+    @JsonProperty("proposalNumber")
     public String proposalNumber;
 
     /**
      * Número do pedido no sistema terceiro
      */
-    @JsonProperty("id")
+    @JsonProperty("orderNumber")
     public String orderNumber;
 }

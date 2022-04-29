@@ -31,12 +31,12 @@ public class ProductDTO {
     /**
      * Código de identificação no sistema terceiro
      */
-    @JsonProperty("id")
+    @JsonProperty("productCode")
     public String productCode;
 
     /**
      * Código de identificação da derivação no sistema terceiro
      */
-    @JsonProperty("id")
+    @JsonProperty("productDerivationCode")
     public String productDerivationCode;
 }

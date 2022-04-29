@@ -61,5 +61,4 @@ public class AccountPhone extends ErrorResponseEntity {
      */
     @JsonProperty("mainPhone")
     public Boolean mainPhone;
-
 }

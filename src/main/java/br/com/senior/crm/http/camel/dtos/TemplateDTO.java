@@ -21,7 +21,7 @@ import org.apache.camel.component.jackson.JacksonDataFormat;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class TemplateDTO {
 
-    public static final JacksonDataFormat COMPANY_SIZE_DTO_FORMAT = new JacksonDataFormat(TemplateDTO.class);
+    public static final JacksonDataFormat TEMPLATE_DTO_FORMAT = new JacksonDataFormat(TemplateDTO.class);
 
     /**
      * Código de identificação no CRM

@@ -1,6 +1,9 @@
 package br.com.senior.crm.http.camel.entities.opportunity;
 
-import br.com.senior.crm.http.camel.dtos.*;
+import br.com.senior.crm.http.camel.dtos.OpportunityDTO;
+import br.com.senior.crm.http.camel.dtos.PriceTableDTO;
+import br.com.senior.crm.http.camel.dtos.ProposalDTO;
+import br.com.senior.crm.http.camel.dtos.ServiceDTO;
 import br.com.senior.crm.http.camel.entities.ErrorResponseEntity;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -12,7 +15,7 @@ import lombok.NoArgsConstructor;
 import org.apache.camel.component.jackson.JacksonDataFormat;
 
 /**
- * Entidade de produtos - Entrada
+ * Entidade de serviços - Entrada
  */
 @AllArgsConstructor
 @NoArgsConstructor
@@ -20,9 +23,9 @@ import org.apache.camel.component.jackson.JacksonDataFormat;
 @RegisterForReflection(serialization = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class OpportunityProduct extends ErrorResponseEntity {
+public class OpportunityService extends ErrorResponseEntity {
 
-    public static final JacksonDataFormat OPPORTUNITY_PRODUCT_FORMAT = new JacksonDataFormat(OpportunityProduct.class);
+    public static final JacksonDataFormat OPPORTUNITY_SERVICE_FORMAT = new JacksonDataFormat(OpportunityService.class);
 
     /**
      * Código de identificação no CRM
@@ -49,10 +52,10 @@ public class OpportunityProduct extends ErrorResponseEntity {
     public Long sequenceErp;
 
     /**
-     * Produto da proposta
+     * Serviço
      */
-    @JsonProperty("product")
-    public ProductDTO product;
+    @JsonProperty("service")
+    public ServiceDTO service;
 
     /**
      * Quantidade do produto na proposta
@@ -61,34 +64,16 @@ public class OpportunityProduct extends ErrorResponseEntity {
     public Double quantity;
 
     /**
-     * Depósito do produto
-     */
-    @JsonProperty("deposit")
-    public DepositDTO deposit;
-
-    /**
      * Tabela de preço do produto
      */
     @JsonProperty("priceTable")
     public PriceTableDTO priceTable;
 
     /**
-     * Tipo de venda
-     */
-    @JsonProperty("saleType")
-    public Long saleType;
-
-    /**
      * Valor da vensa do produto na proposta
      */
     @JsonProperty("saleValue")
     public Double saleValue;
-
-    /**
-     * Informativo se deve aplicar o valor de correção no valor do produto
-     */
-    @JsonProperty("applyCorrectionFactor")
-    public Boolean applyCorrectionFactor;
 
     /**
      * Valor de desconto do produto

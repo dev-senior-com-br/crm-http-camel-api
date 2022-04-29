@@ -9,6 +9,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.apache.camel.component.jackson.JacksonDataFormat;
 
+/**
+ * DTO do tipo
+ * de negócio
+ */
 @AllArgsConstructor
 @NoArgsConstructor
 @Data

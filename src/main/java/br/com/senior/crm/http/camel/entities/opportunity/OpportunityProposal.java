@@ -209,5 +209,4 @@ public class OpportunityProposal extends ErrorResponseEntity {
      */
     @JsonProperty("customFields")
     public String customFields;
-
 }

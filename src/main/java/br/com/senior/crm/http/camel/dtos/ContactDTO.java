@@ -33,5 +33,4 @@ public class ContactDTO {
      */
     @JsonProperty("idErp")
     public String idErp;
-
 }

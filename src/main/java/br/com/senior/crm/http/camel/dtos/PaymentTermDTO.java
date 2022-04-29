@@ -26,18 +26,18 @@ public class PaymentTermDTO {
     /**
      * Código de identificação no CRM
      */
-    @JsonProperty("representative")
+    @JsonProperty("id")
     public Long id;
 
     /**
      * Código de identificação no sistema terceiro
      */
-    @JsonProperty("representative")
+    @JsonProperty("idErp")
     public String idErp;
 
     /**
      * Nome do termo de pagamento
      */
-    @JsonProperty("representative")
+    @JsonProperty("name")
     public String name;
 }

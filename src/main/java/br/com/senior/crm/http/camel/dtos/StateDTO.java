@@ -45,5 +45,4 @@ public class StateDTO {
      */
     @JsonProperty("country")
     public CountryDTO country;
-
 }
