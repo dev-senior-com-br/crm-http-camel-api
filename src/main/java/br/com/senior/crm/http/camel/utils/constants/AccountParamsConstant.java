@@ -2,16 +2,16 @@ package br.com.senior.crm.http.camel.utils.constants;
 
 import java.util.List;
 
-public class AccountParamsConstant extends ErpParamsConstant
-{
-    public final static String TYPE_ACCOUNT   = "Type-Account";
-    public final static String ACTION_REMOVE = "Action-Remove";
-    public final static String FIELDS_ACCOUNT = "Fields-Account";
-    public final static String FIELDS_ADDRESS = "Fields-Address";
-    public final static String FIELDS_PHONE   = "Fields-Phone";
-    public final static String FIELDS_CONTACT = "Fields-Contact";
+public class AccountParamsConstant extends ErpParamsConstant {
 
-    public final static List<String> PARAMS = List.of(
+    public static final String TYPE_ACCOUNT   = "Type-Account";
+    public static final String ACTION_REMOVE = "Action-Remove";
+    public static final String FIELDS_ACCOUNT = "Fields-Account";
+    public static final String FIELDS_ADDRESS = "Fields-Address";
+    public static final String FIELDS_PHONE   = "Fields-Phone";
+    public static final String FIELDS_CONTACT = "Fields-Contact";
+
+    public static final List<String> PARAMS = List.of(
         BASE_URL_ERP,
         USERNAME_ERP,
         PASSWORD_ERP,

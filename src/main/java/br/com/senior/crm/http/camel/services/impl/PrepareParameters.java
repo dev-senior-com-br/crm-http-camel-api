@@ -9,8 +9,10 @@ import org.json.JSONObject;
 import java.util.Base64;
 import java.util.List;
 
-public class PrepareParameters
-{
+public class PrepareParameters  {
+
+    private PrepareParameters(){}
+
     private static final String HEADER_PARAMS = "X-Param-";
 
     public static void prepare(Exchange exchange, List<String> params)

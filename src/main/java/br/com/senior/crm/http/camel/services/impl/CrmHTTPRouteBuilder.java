@@ -9,14 +9,14 @@ import org.apache.camel.builder.RouteBuilder;
 
 public class CrmHTTPRouteBuilder extends SeniorXHTTPRouteBuilder {
 
-    public static String DOMAIN = "crm";
+    public static final String DOMAIN_CRM = "crm";
 
     public CrmHTTPRouteBuilder(RouteBuilder builder, ServiceEnum service, PrimitiveType primitiveType, PrimitiveEnum primitive, MethodEnum method)
     {
         super(builder);
 
         this
-            .domain(DOMAIN)
+            .domain(DOMAIN_CRM)
             .service(service.getPath())
             .primitiveType(primitiveType)
             .primitive(primitive.getPath())
