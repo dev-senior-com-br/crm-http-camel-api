@@ -45,4 +45,8 @@ public class CrmHTTPRouteBuilder extends SeniorXHTTPRouteBuilder {
             .method(method)
         ;
     }
+
+    public void setId(String id){
+        this.primitive += id;
+    }
 }
