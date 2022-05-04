@@ -9,9 +9,9 @@ public enum PrimitiveEnum
     ACCOUNT_DEFINITION("accountDefinition"),
     ACCOUNT_PHONE("accountPhone"),
     ACCOUNT_ADDRESS("accountAddress"),
-    GET_ACCOUNT_DEFINITION("getAccountDefinition"),
-    GET_ACCOUNT_PHONE("getAccountPhone"),
-    GET_ACCOUNT_ADDRESS("getAccountAddress")
+    GET_ACCOUNT_DEFINITION("getDefinitionByAccount"),
+    GET_ACCOUNT_PHONE("getPhoneByAccount"),
+    GET_ACCOUNT_ADDRESS("getAddressByAccount")
     // Opportunity
 
     // Base Records
