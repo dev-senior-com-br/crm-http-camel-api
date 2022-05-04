@@ -18,7 +18,7 @@ public class CrmHTTPRouteBuilder extends SeniorXHTTPRouteBuilder {
         this.setInfo(
             service.getPath(),
             primitiveType,
-            primitive.getPath().concat("/").concat(id),
+            primitive.getPath() + "/" + id,
             method.getPath()
         );
     }
