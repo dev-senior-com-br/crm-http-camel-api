@@ -11,16 +11,38 @@ public class CrmHTTPRouteBuilder extends SeniorXHTTPRouteBuilder {
 
     public static final String DOMAIN_CRM = "crm";
 
+    public CrmHTTPRouteBuilder(RouteBuilder builder, ServiceEnum service, PrimitiveType primitiveType, PrimitiveEnum primitive, MethodEnum method, String id)
+    {
+        super(builder);
+
+        this.setInfo(
+            service.getPath(),
+            primitiveType,
+            primitive.getPath().concat("/").concat(id),
+            method.getPath()
+        );
+    }
+
     public CrmHTTPRouteBuilder(RouteBuilder builder, ServiceEnum service, PrimitiveType primitiveType, PrimitiveEnum primitive, MethodEnum method)
     {
         super(builder);
 
+        this.setInfo(
+            service.getPath(),
+            primitiveType,
+            primitive.getPath(),
+            method.getPath()
+        );
+    }
+
+    private void setInfo(String service, PrimitiveType primitiveType, String primitive, String method)
+    {
         this
             .domain(DOMAIN_CRM)
-            .service(service.getPath())
+            .service(service)
             .primitiveType(primitiveType)
-            .primitive(primitive.getPath())
-            .method(method.getPath())
+            .primitive(primitive)
+            .method(method)
         ;
     }
 }
