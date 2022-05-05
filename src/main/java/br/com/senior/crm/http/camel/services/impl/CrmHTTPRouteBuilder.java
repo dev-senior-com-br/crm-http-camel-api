@@ -36,7 +36,7 @@ public class CrmHTTPRouteBuilder extends SeniorXHTTPRouteBuilder {
     }
 
     private void setInfo(String service, PrimitiveType primitiveType, String primitive, String method) {
-        this.primitiveCrm = this.primitive;
+        this.primitiveCrm = primitive;
         this
             .domain(DOMAIN_CRM)
             .service(service)
