@@ -10,21 +10,21 @@ import org.apache.camel.builder.RouteBuilder;
 public class CrmHTTPRouteBuilder extends SeniorXHTTPRouteBuilder {
 
     public static final String DOMAIN_CRM = "crm";
+    private String primitiveCrm = "";
 
-    public CrmHTTPRouteBuilder(RouteBuilder builder, ServiceEnum service, PrimitiveType primitiveType, PrimitiveEnum primitive, MethodEnum method, String id)
-    {
+    public CrmHTTPRouteBuilder(RouteBuilder builder, ServiceEnum service, PrimitiveType primitiveType, PrimitiveEnum primitive, MethodEnum method, String id) {
         super(builder);
 
         this.setInfo(
             service.getPath(),
             primitiveType,
-            primitive.getPath() + "/" + id,
+            primitive.getPath(),
             method.getPath()
         );
+        this.setId(id);
     }
 
-    public CrmHTTPRouteBuilder(RouteBuilder builder, ServiceEnum service, PrimitiveType primitiveType, PrimitiveEnum primitive, MethodEnum method)
-    {
+    public CrmHTTPRouteBuilder(RouteBuilder builder, ServiceEnum service, PrimitiveType primitiveType, PrimitiveEnum primitive, MethodEnum method) {
         super(builder);
 
         this.setInfo(
@@ -35,8 +35,8 @@ public class CrmHTTPRouteBuilder extends SeniorXHTTPRouteBuilder {
         );
     }
 
-    private void setInfo(String service, PrimitiveType primitiveType, String primitive, String method)
-    {
+    private void setInfo(String service, PrimitiveType primitiveType, String primitive, String method) {
+        this.primitiveCrm = this.primitive;
         this
             .domain(DOMAIN_CRM)
             .service(service)
@@ -46,8 +46,8 @@ public class CrmHTTPRouteBuilder extends SeniorXHTTPRouteBuilder {
         ;
     }
 
-    public void setId(String id)
-    {
-        this.primitive += "/" + id;
+    public void setId(String id) {
+        this.primitive = this.primitiveCrm;
+        this.primitive = String.format(this.primitive.concat("/").concat("%s"), id);
     }
 }
