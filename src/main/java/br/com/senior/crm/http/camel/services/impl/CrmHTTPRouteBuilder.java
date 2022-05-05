@@ -48,6 +48,6 @@ public class CrmHTTPRouteBuilder extends SeniorXHTTPRouteBuilder {
 
     public void setId(String id) {
         this.primitive = this.primitiveCrm;
-        this.primitive = String.format(this.primitive.concat("/").concat("%s"), id);
+        this.primitive += "/" + id;
     }
 }
