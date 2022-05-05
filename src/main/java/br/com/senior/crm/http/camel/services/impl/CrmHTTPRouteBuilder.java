@@ -1,6 +1,7 @@
 package br.com.senior.crm.http.camel.services.impl;
 
 import br.com.senior.crm.http.camel.utils.enums.MethodEnum;
+import br.com.senior.crm.http.camel.utils.enums.PrimitiveComplementEnum;
 import br.com.senior.crm.http.camel.utils.enums.PrimitiveEnum;
 import br.com.senior.crm.http.camel.utils.enums.ServiceEnum;
 import br.com.senior.seniorx.http.camel.PrimitiveType;
@@ -12,7 +13,7 @@ public class CrmHTTPRouteBuilder extends SeniorXHTTPRouteBuilder {
     public static final String DOMAIN_CRM = "crm";
     private String primitiveCrm = "";
 
-    public CrmHTTPRouteBuilder(RouteBuilder builder, ServiceEnum service, PrimitiveType primitiveType, PrimitiveEnum primitive, MethodEnum method, String id) {
+    public CrmHTTPRouteBuilder(RouteBuilder builder, ServiceEnum service, PrimitiveType primitiveType, PrimitiveEnum primitive, MethodEnum method, PrimitiveComplementEnum primitiveComplementEnum, String primitiveComplement) {
         super(builder);
 
         this.setInfo(
@@ -21,7 +22,7 @@ public class CrmHTTPRouteBuilder extends SeniorXHTTPRouteBuilder {
             primitive.getPath(),
             method.getPath()
         );
-        this.setId(id);
+        this.setPrimitiveComplement(primitiveComplement, primitiveComplementEnum);
     }
 
     public CrmHTTPRouteBuilder(RouteBuilder builder, ServiceEnum service, PrimitiveType primitiveType, PrimitiveEnum primitive, MethodEnum method) {
@@ -46,8 +47,8 @@ public class CrmHTTPRouteBuilder extends SeniorXHTTPRouteBuilder {
         ;
     }
 
-    public void setId(String id) {
+    public void setPrimitiveComplement(String primitiveComplement, PrimitiveComplementEnum primitiveComplementEnum) {
         this.primitive = this.primitiveCrm;
-        this.primitive += "/" + id;
+        this.primitive += primitiveComplementEnum.getPath() + primitiveComplement;
     }
 }
