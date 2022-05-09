@@ -75,4 +75,9 @@ public class Authentication
         byte[] valueDecoded = Base64.getDecoder().decode(valueEncoded);
         return new String(valueDecoded);
     }
+
+    public static void addAuthorization(Exchange exchange)
+    {
+        AuthenticationAPI.addAuthorization(exchange);
+    }
 }
