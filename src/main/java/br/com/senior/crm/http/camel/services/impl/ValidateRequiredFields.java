@@ -1,25 +1,20 @@
 package br.com.senior.crm.http.camel.services.impl;
 
-import br.com.senior.crm.http.camel.entities.account.Account;
-import br.com.senior.crm.http.camel.entities.account.AccountAddress;
-import br.com.senior.crm.http.camel.entities.account.AccountPhone;
+import br.com.senior.crm.http.camel.entities.account.*;
 import br.com.senior.crm.http.camel.utils.constants.AccountParamsConstant;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
 import org.apache.camel.Exchange;
-import org.apache.camel.Message;
 import org.apache.camel.builder.RouteBuilder;
 import org.json.JSONArray;
 
 import java.util.Map;
 import java.util.UUID;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 @RequiredArgsConstructor
-public class ValidateRequiredFields
-{
+public class ValidateRequiredFields {
     @NonNull
     private RouteBuilder builder;
     private final UUID id = UUID.randomUUID();
@@ -28,42 +23,61 @@ public class ValidateRequiredFields
     @Getter
     private final String directResponse = "direct:crm-validate-required-fields-response-" + id.toString();
 
-    public void prepare()
-    {
+    public void prepare() {
         builder
             .from(directImpl)
             .choice()
-            .when(this::validate)
+            .when(this::isAccount)
+            .process(this::validateAccount)
+            .when(this::isAddress)
+            .process(this::validateAddress)
+            .when(this::isPhone)
+            .process(this::validatePhone)
+            .endChoice()
             .to(directResponse)
-            .otherwise()
-            .endRest()
         ;
     }
 
-    private boolean validate(Exchange exchange)
-    {
-        Message message = exchange.getMessage();
-        Map<Object, Object> body = (Map<Object, Object>) message.getBody();
-        Class<?> nameClass = message.getBody().getClass();
-        JSONArray fields = new JSONArray();
-        AtomicBoolean rtn = new AtomicBoolean(true);
+    private boolean isAccount(Object body) {
+        return body instanceof Account;
+    }
+    private boolean isAddress(Object body) {
+        return body instanceof AccountAddressCollection;
+    }
+    private boolean isPhone(Object body) {
+        return body instanceof AccountPhoneCollection;
+    }
 
-        if (Account.class.equals(nameClass)) {
-            fields = (JSONArray) exchange.getProperty(AccountParamsConstant.FIELDS_ACCOUNT);
-        } else if (AccountAddress.class.equals(nameClass)) {
-            fields = (JSONArray) exchange.getProperty(AccountParamsConstant.FIELDS_ADDRESS);
-        } else if (AccountPhone.class.equals(nameClass)) {
-            fields = (JSONArray) exchange.getProperty(AccountParamsConstant.FIELDS_PHONE);
-        }
+    private void validateAccount(Exchange exchange) {
+        Map<Account, Account> account = (Map<Account, Account>) this.getBody(exchange, Account.class);
 
-        fields.forEach(o -> {
-            if (body.get(o) == null || body.get(o).toString().length() == 0) {
-                System.err.println(nameClass);
-                System.err.println(o);
-                rtn.set(false);
+        exchange.getProperty(AccountParamsConstant.FIELDS_ACCOUNT, JSONArray.class).forEach(o -> {
+            if (account.get(o).toString().length() == 0) {
+                throw new RuntimeException("O campo " + o + " da conta é obrigatório");
             }
         });
+    }
 
-        return rtn.get();
+    private void validateAddress(Exchange exchange) {
+//        Map<AccountAddress, AccountAddress> accountAddress = (Map<AccountAddress, AccountAddress>) this.getBody(exchange, AccountAddressCollection.class);
+//
+//        exchange.getProperty(AccountParamsConstant.FIELDS_ADDRESS, JSONArray.class).forEach(o -> {
+//            if (accountAddress.get(o).toString().length() == 0) {
+//                throw new RuntimeException("O campo " + o + " da conta é obrigatório");
+//            }
+//        });
+    }
+
+    private void validatePhone(Exchange exchange) {
+//        Map<AccountPhone, AccountPhone> account = (Map<AccountPhone, AccountPhone>) this.getBody(exchange, AccountPhoneCollection.class);
+//
+//        exchange.getProperty(AccountParamsConstant.FIELDS_PHONE, JSONArray.class).forEach(o -> {
+//            if (account.get(o).toString().length() == 0) {
+//                throw new RuntimeException("O campo " + o + " da conta é obrigatório");
+//            }
+//        });
+    }
+    private  <T> T getBody(Exchange exchange, Class<T> type) {
+        return exchange.getMessage().getBody(type);
     }
 }
