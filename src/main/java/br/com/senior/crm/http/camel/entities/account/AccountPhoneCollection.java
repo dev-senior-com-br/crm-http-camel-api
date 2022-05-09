@@ -17,7 +17,7 @@ import java.util.List;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AccountPhoneCollection {
 
-    public static final JacksonDataFormat JACKSON_DATA_FORMAT = new JacksonDataFormat(AccountPhone.class);
+    public static final JacksonDataFormat JACKSON_DATA_FORMAT = new JacksonDataFormat(AccountPhoneCollection.class);
 
     @JsonProperty("telephones")
     public List<AccountPhone> telephones;
