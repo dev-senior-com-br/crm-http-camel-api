@@ -48,13 +48,13 @@ public class AccountPhone extends ErrorResponseEntity {
      * Tipo de telefone da conta
      */
     @JsonProperty("phoneType")
-    public EnumPhoneTypeDTO phoneType;
+    public Integer phoneType;
 
     /**
      * Operadora de telefone da conta
      */
     @JsonProperty("phoneOperator")
-    public EnumOperatorDTO phoneOperator;
+    public Integer phoneOperator;
 
     /**
      * É o principal telefone da conta
