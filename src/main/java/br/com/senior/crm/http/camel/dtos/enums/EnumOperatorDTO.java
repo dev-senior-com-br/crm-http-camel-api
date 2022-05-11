@@ -10,24 +10,24 @@ public enum EnumOperatorDTO {
     /**
      * CLARO
      */
-    CLARO("1"),
+    CLARO(1),
     /**
      * TIM
      */
-    TIM("2"),
+    TIM(2),
     /**
      * VIVO
      */
-    VIVO("3"),
+    VIVO(3),
     /**
      * OI
      */
-    OI("4");
+    OI(4);
 
     @Getter
-    private String operator;
+    private Integer operator;
 
-    EnumOperatorDTO(String operator) {
+    EnumOperatorDTO(Integer operator) {
         this.operator = operator;
     }
 }

@@ -9,20 +9,20 @@ public enum EnumPhoneTypeDTO {
     /**
      * Tipo Telefone Fixo
      */
-    TelefoneFixo("1"),
+    TelefoneFixo(1),
     /**
      * Tipo Celular
      */
-    Celular("2"),
+    Celular(2),
     /**
      * Tipo Fax
      */
-    Fax("3");
+    Fax(3);
 
     @Getter
-    private String type;
+    private Integer type;
 
-    EnumPhoneTypeDTO(String type) {
+    EnumPhoneTypeDTO(Integer type) {
         this.type = type;
     }
 }
