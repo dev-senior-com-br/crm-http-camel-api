@@ -67,6 +67,24 @@ public class Account extends ErrorResponseEntity {
     public String rg;
 
     /**
+     * Nit (Novasoft)
+     */
+    @JsonProperty("nit")
+    public String nit;
+
+    /**
+     * Cedula de Ciudadania (Novasoft)
+     */
+    @JsonProperty("cedulaCiudadania")
+    public String cedulaCiudadania;
+
+    /**
+     * Passaporte (Novasoft)
+     */
+    @JsonProperty("passaporte")
+    public String passaporte;
+
+    /**
      * Ramo de atividade
      */
     @JsonProperty("activityBranch")
