@@ -46,11 +46,14 @@ public class FilterFields {
 
     private boolean filter(Exchange exchange)
     {
+        System.out.println("Step 1");
         boolean isValid = false;
 
+        System.out.println(exchange.getMessage().getBody() instanceof AccountDefinition);
         if (exchange.getMessage().getBody() instanceof AccountDefinition) {
             isValid = this.filterAccountDefinition(exchange.getMessage().getBody(AccountDefinition.class), exchange.getProperty(AccountParamsConstant.TYPE_ACCOUNT, Long.class));
         }
+        System.out.println(isValid);
 
         return isValid;
     }
