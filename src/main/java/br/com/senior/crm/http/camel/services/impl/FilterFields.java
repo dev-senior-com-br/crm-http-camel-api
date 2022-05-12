@@ -2,6 +2,7 @@ package br.com.senior.crm.http.camel.services.impl;
 
 import br.com.senior.crm.http.camel.entities.account.Account;
 import br.com.senior.crm.http.camel.entities.account.AccountDefinition;
+import br.com.senior.crm.http.camel.entities.account.AccountDefinitionCollection;
 import br.com.senior.crm.http.camel.utils.constants.AccountParamsConstant;
 import lombok.Getter;
 import lombok.NonNull;
@@ -46,26 +47,28 @@ public class FilterFields {
 
     private boolean filter(Exchange exchange)
     {
-        System.out.println("Step 1");
         boolean isValid = false;
 
-        System.out.println(exchange.getMessage().getBody() instanceof AccountDefinition);
-        if (exchange.getMessage().getBody() instanceof AccountDefinition) {
-            isValid = this.filterAccountDefinition(exchange.getMessage().getBody(AccountDefinition.class), exchange.getProperty(AccountParamsConstant.TYPE_ACCOUNT, Long.class));
+        if (exchange.getMessage().getBody() instanceof AccountDefinitionCollection) {
+            isValid = this.filterAccountDefinition(exchange);
         }
+
         System.out.println(isValid);
 
         return isValid;
     }
 
-    private boolean filterAccountDefinition(AccountDefinition accountDefinition, Long typeAccount)
+    private boolean filterAccountDefinition(Exchange exchange)
     {
+        AccountDefinitionCollection collection = exchange.getMessage().getBody(AccountDefinitionCollection.class);
+        Long typeAccount = exchange.getProperty(AccountParamsConstant.TYPE_ACCOUNT, Long.class);
         boolean isValid = false;
 
-        isValid = accountDefinition.getAccountType().getId().equals(typeAccount);
-
-        if (isValid == false) {
-            System.out.println("O tipo de conta é " + accountDefinition.getAccountType().getId() + " e somente o tipo de conta " + typeAccount + " pode ser integrado!");
+        for (AccountDefinition accountDefinition : collection.definitions) {
+            if (!isValid) {
+                isValid = accountDefinition.getAccountType().getId().equals(typeAccount);
+                System.out.println(accountDefinition.getAccountType().getId() + " == " + typeAccount);
+            }
         }
 
         return isValid;
