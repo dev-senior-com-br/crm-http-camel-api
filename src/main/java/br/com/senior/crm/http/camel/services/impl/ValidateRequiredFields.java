@@ -36,6 +36,8 @@ public class ValidateRequiredFields {
                 .when(this::isPhone)
                     .log("isPhone")
                     .process(this::validatePhone)
+                .otherwise()
+                    .log("Validation not found")
             .endChoice()
             .to(directResponse)
         ;
