@@ -39,6 +39,7 @@ public class FilterFields {
 
         builder.
             from(DIRECT_END_REST)
+            .log("Não passou no filtro")
             .endRest()
         ;
     }
