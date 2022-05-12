@@ -46,7 +46,7 @@ public class FilterFields {
 
     private boolean filter(Exchange exchange)
     {
-        Boolean isValid = false;
+        boolean isValid = false;
 
         if (exchange.getMessage().getBody() instanceof AccountDefinition) {
             isValid = this.filterAccountDefinition(exchange.getMessage().getBody(AccountDefinition.class), exchange.getProperty(AccountParamsConstant.TYPE_ACCOUNT, Long.class));
@@ -57,12 +57,12 @@ public class FilterFields {
 
     private boolean filterAccountDefinition(AccountDefinition accountDefinition, Long typeAccount)
     {
-        Boolean isValid = false;
+        boolean isValid = false;
 
         isValid = accountDefinition.getAccountType().getId().equals(typeAccount);
 
-        if (isValid.equals(false)) {
-            log.info("O tipo de conta é " + accountDefinition.getAccountType().getId() + " e somente o tipo de conta " + typeAccount + " pode ser integrado!");
+        if (isValid == false) {
+            System.out.println("O tipo de conta é " + accountDefinition.getAccountType().getId() + " e somente o tipo de conta " + typeAccount + " pode ser integrado!");
         }
 
         return isValid;
