@@ -53,8 +53,6 @@ public class FilterFields {
             isValid = this.filterAccountDefinition(exchange);
         }
 
-        System.out.println(isValid);
-
         return isValid;
     }
 
@@ -67,6 +65,7 @@ public class FilterFields {
         for (AccountDefinition accountDefinition : collection.definitions) {
             if (!isValid) {
                 isValid = accountDefinition.getAccountType().getId().equals(typeAccount);
+                log.info("Comparative between account type: Definition " + accountDefinition.getId() + " with type account " + accountDefinition.getAccountType().getId() + " and parameter type account " + typeAccount);
                 System.out.println(accountDefinition.getAccountType().getId() + " == " + typeAccount);
             }
         }
