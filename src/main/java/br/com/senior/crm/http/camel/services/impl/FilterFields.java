@@ -66,7 +66,6 @@ public class FilterFields {
             if (!isValid) {
                 isValid = accountDefinition.getAccountType().getId().equals(typeAccount);
                 log.info("Comparative between account type: Definition " + accountDefinition.getId() + " with type account " + accountDefinition.getAccountType().getId() + " and parameter type account " + typeAccount);
-                System.out.println(accountDefinition.getAccountType().getId() + " == " + typeAccount);
             }
         }
 
