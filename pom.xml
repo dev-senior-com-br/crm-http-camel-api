@@ -32,7 +32,7 @@
         <junit-jupiter-version>5.6.0</junit-jupiter-version>
         <junit-version>4.13.1</junit-version>
 
-        <seniorx-http-camel-api-version>1.2.0</seniorx-http-camel-api-version>
+        <seniorx-http-camel-api-version>1.3.0</seniorx-http-camel-api-version>
         <lombok-version>1.18.24</lombok-version>
         <json-version>20201115</json-version>
     </properties>
