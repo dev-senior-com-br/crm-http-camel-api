@@ -67,6 +67,7 @@ public class Authentication
         loginWithKeyInput.secret = authorization[1];
         loginWithKeyInput.tenantName = message.getHeader(HeadersConstants.TENANT, String.class);
 
+        message.removeHeader(HeadersConstants.AUTHORIZATION);
         message.setBody(loginWithKeyInput);
     }
 
