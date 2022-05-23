@@ -41,24 +41,24 @@ public class AccountPhone extends ErrorResponseEntity {
     /**
      * Número de telefone da conta
      */
-    @JsonProperty("phoneNumber")
-    public String phoneNumber;
+    @JsonProperty("number")
+    public String number;
 
     /**
      * Tipo de telefone da conta
      */
-    @JsonProperty("phoneType")
-    public Integer phoneType;
+    @JsonProperty("type")
+    public Integer type;
 
     /**
      * Operadora de telefone da conta
      */
-    @JsonProperty("phoneOperator")
-    public Integer phoneOperator;
+    @JsonProperty("operator")
+    public Integer operator;
 
     /**
      * É o principal telefone da conta
      */
-    @JsonProperty("mainPhone")
-    public Boolean mainPhone;
+    @JsonProperty("main")
+    public Boolean main;
 }
