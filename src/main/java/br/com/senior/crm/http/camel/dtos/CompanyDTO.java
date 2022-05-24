@@ -7,36 +7,24 @@ import io.quarkus.runtime.annotations.RegisterForReflection;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.apache.camel.component.jackson.JacksonDataFormat;
 
-/**
- * DTO da empresa Filial
- */
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @RegisterForReflection(serialization = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class CompanyBranchDTO {
+public class CompanyDTO {
 
-    public static final JacksonDataFormat COMPANY_BRANCH_DTO_FORMAT = new JacksonDataFormat(CompanyBranchDTO.class);
-
-    /**
-     * Código de identificação no CRM
-     */
     @JsonProperty("id")
     public Long id;
 
-    /**
-     * Código de identificação da empresa no sistema terceiro
-     */
-    @JsonProperty("company")
-    public CompanyDTO company;
+    @JsonProperty("idErp")
+    public String idErp;
 
-    /**
-     * Código de identificação da filial no sistema terceiro
-     */
-    @JsonProperty("branch")
-    public BranchDTO branch;
+    @JsonProperty("name")
+    public String name;
+
+    @JsonProperty("fantasyName")
+    public String fantasyName;
 }
