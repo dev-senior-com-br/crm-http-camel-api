@@ -11,11 +11,14 @@ public enum PrimitiveEnum
     ACCOUNT_ADDRESS("accountAddress"),
     GET_ACCOUNT_DEFINITION("getDefinitionByAccount"),
     GET_ACCOUNT_PHONE("getPhoneByAccount"),
-    GET_ACCOUNT_ADDRESS("getAddressByAccount")
+    GET_ACCOUNT_ADDRESS("getAddressByAccount"),
     // Opportunity
 
-    // Base Records
+    // Basic Records
 
+    // Integration Management
+    LIST_LOG_BY_INTEGRATION("listLogByIntegration"),
+    LOG_INTEGRATION("logIntegration")
     ;
 
     @Getter
