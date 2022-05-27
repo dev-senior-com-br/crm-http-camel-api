@@ -75,14 +75,14 @@ public class Account extends ErrorResponseEntity {
     /**
      * Cedula de Ciudadania (Novasoft)
      */
-    @JsonProperty("cedulaCiudadania")
-    public String cedulaCiudadania;
+    @JsonProperty("citizenshipCard")
+    public String citizenshipCard;
 
     /**
      * Passaporte (Novasoft)
      */
-    @JsonProperty("passaporte")
-    public String passaporte;
+    @JsonProperty("passport")
+    public String passport;
 
     /**
      * Ramo de atividade
