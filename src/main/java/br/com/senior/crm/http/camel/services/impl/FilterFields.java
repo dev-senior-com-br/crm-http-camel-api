@@ -41,6 +41,7 @@ public class FilterFields {
         builder.
             from(DIRECT_END_REST)
             .log("Não passou no filtro")
+            .process(exchange -> exchange.getMessage().setBody(null))
             .endRest()
         ;
     }
