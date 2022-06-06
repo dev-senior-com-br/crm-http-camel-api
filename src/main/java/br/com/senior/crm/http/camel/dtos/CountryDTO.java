@@ -34,4 +34,11 @@ public class CountryDTO {
     @JsonProperty("name")
     public String name;
 
+    /**
+     * Id ERO
+     */
+    @JsonProperty("idErp")
+    public String idErp;
+
+
 }
