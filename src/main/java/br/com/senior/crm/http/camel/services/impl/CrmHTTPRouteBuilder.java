@@ -56,11 +56,4 @@ public class CrmHTTPRouteBuilder extends SeniorXHTTPRouteBuilder {
         this.primitive = this.primitiveCrm;
         this.primitive += primitiveComplementEnum.getPath() + primitiveComplement;
     }
-
-    @Override
-    public void route(Exchange exchange) {
-        exchange.setProperty(SaveLog.PAYLOAD_SENT, exchange.getMessage().getBody(String.class));
-        super.route(exchange);
-        exchange.setProperty(SaveLog.PAYLOAD_RECEIVER, exchange.getMessage().getBody(String.class));
-    }
 }
