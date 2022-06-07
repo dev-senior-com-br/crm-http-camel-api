@@ -6,6 +6,7 @@ import br.com.senior.crm.http.camel.utils.enums.PrimitiveEnum;
 import br.com.senior.crm.http.camel.utils.enums.ServiceEnum;
 import br.com.senior.seniorx.http.camel.PrimitiveType;
 import br.com.senior.seniorx.http.camel.SeniorXHTTPRouteBuilder;
+import org.apache.camel.Exchange;
 import org.apache.camel.builder.RouteBuilder;
 
 public class CrmHTTPRouteBuilder extends SeniorXHTTPRouteBuilder {
@@ -23,6 +24,8 @@ public class CrmHTTPRouteBuilder extends SeniorXHTTPRouteBuilder {
             method.getPath()
         );
         this.setPrimitiveComplement(primitiveComplement, primitiveComplementEnum);
+
+        this.throwExceptionOnFailure(false);
     }
 
     public CrmHTTPRouteBuilder(RouteBuilder builder, ServiceEnum service, PrimitiveType primitiveType, PrimitiveEnum primitive, MethodEnum method) {
@@ -34,6 +37,8 @@ public class CrmHTTPRouteBuilder extends SeniorXHTTPRouteBuilder {
             primitive.getPath(),
             method.getPath()
         );
+
+        this.throwExceptionOnFailure(false);
     }
 
     private void setInfo(String service, PrimitiveType primitiveType, String primitive, String method) {
@@ -50,5 +55,12 @@ public class CrmHTTPRouteBuilder extends SeniorXHTTPRouteBuilder {
     public void setPrimitiveComplement(String primitiveComplement, PrimitiveComplementEnum primitiveComplementEnum) {
         this.primitive = this.primitiveCrm;
         this.primitive += primitiveComplementEnum.getPath() + primitiveComplement;
+    }
+
+    @Override
+    public void route(Exchange exchange) {
+        exchange.setProperty(SaveLog.PAYLOAD_SENT, exchange.getMessage().getBody(String.class));
+        super.route(exchange);
+        exchange.setProperty(SaveLog.PAYLOAD_RECEIVER, exchange.getMessage().getBody(String.class));
     }
 }

@@ -1,6 +1,7 @@
 package br.com.senior.crm.http.camel.services.impl;
 
 import br.com.senior.crm.http.camel.entities.integrationManagement.LogIntegration;
+import br.com.senior.crm.http.camel.utils.constants.HeadersConstants;
 import br.com.senior.crm.http.camel.utils.enums.MethodEnum;
 import br.com.senior.crm.http.camel.utils.enums.PrimitiveEnum;
 import br.com.senior.crm.http.camel.utils.enums.ServiceEnum;
@@ -9,13 +10,15 @@ import lombok.Getter;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.apache.camel.Exchange;
-import org.apache.camel.Message;
 import org.apache.camel.builder.RouteBuilder;
 
 import java.util.UUID;
 
 @RequiredArgsConstructor
 public class SaveLog {
+
+    public static String PAYLOAD_SENT = "payloadSent";
+    public static String PAYLOAD_RECEIVER = "payloadReceiver";
     @NonNull
     private RouteBuilder builder;
     private final UUID id = UUID.randomUUID();
@@ -24,8 +27,7 @@ public class SaveLog {
     @Getter
     private final String directResponse = "direct:crm-save-log-response-" + id.toString();
 
-    void prepare()
-    {
+    void prepare() {
         CrmHTTPRouteBuilder logIntegration = new CrmHTTPRouteBuilder(
             builder,
             ServiceEnum.CRM_INTEGRATION_MANAGEMENT,
@@ -37,18 +39,28 @@ public class SaveLog {
         builder
             .from(directImpl)
             .choice()
-            .when(this::isBodyLogIntegration)
+            .process(this::prepareLogIntegration)
             .marshal(LogIntegration.JACKSON_DATA_FORMAT)
             .process(logIntegration::route)
-            .end()
+            .log("Return POST logIntegration: ${body}")
+            .process(exchange -> exchange.getMessage().setBody(exchange.getProperty(PAYLOAD_RECEIVER)))
             .to(directResponse)
         ;
     }
 
-    private boolean isBodyLogIntegration(Exchange exchange)
+    private void prepareLogIntegration(Exchange exchange)
     {
-        Message message = exchange.getMessage();
+        String integration = exchange.getMessage().getHeader(HeadersConstants.INTEGRATION, String.class);
+        String payloadSent = exchange.getProperty(PAYLOAD_SENT, String.class);
+        String payloadReceived = exchange.getProperty(PAYLOAD_RECEIVER, String.class);
+        Long statusCode = exchange.getMessage().getHeader(Exchange.HTTP_RESPONSE_CODE, Long.class);
 
-        return message.getBody() instanceof LogIntegration;
+        LogIntegration log = new LogIntegration();
+        log.setIntegration(integration);
+        log.setPayloadSent(payloadSent);
+        log.setPayloadReceived(payloadReceived);
+        log.setStatusCode(statusCode);
+
+        exchange.getMessage().setBody(log);
     }
 }
