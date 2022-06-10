@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.46-alpha] - 2022-06-10
+
 ## [0.0.45-alpha] - 2022-06-07
 
 ## [0.0.44-alpha] - 2022-06-07
@@ -105,7 +107,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
-[Unreleased]: https://github.com/dev-senior-com-br/crm-http-camel-api/compare/0.0.45-alpha...HEAD
+[Unreleased]: https://github.com/dev-senior-com-br/crm-http-camel-api/compare/0.0.46-alpha...HEAD
+
+[0.0.46-alpha]: https://github.com/dev-senior-com-br/crm-http-camel-api/compare/0.0.45-alpha...0.0.46-alpha
 
 [0.0.45-alpha]: https://github.com/dev-senior-com-br/crm-http-camel-api/compare/0.0.44-alpha...0.0.45-alpha
 
