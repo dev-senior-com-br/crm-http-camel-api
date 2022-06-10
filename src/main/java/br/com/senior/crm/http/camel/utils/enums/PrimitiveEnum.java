@@ -9,6 +9,7 @@ public enum PrimitiveEnum
     ACCOUNT_DEFINITION("accountDefinition"),
     ACCOUNT_PHONE("accountPhone"),
     ACCOUNT_ADDRESS("accountAddress"),
+    ACCOUNT_HISTORY_INTEGRATION("accountHistoryIntegration"),
     GET_ACCOUNT_DEFINITION("getDefinitionByAccount"),
     GET_ACCOUNT_PHONE("getPhoneByAccount"),
     GET_ACCOUNT_ADDRESS("getAddressByAccount"),
