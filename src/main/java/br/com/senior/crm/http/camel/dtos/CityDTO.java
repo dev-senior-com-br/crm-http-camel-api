@@ -46,4 +46,10 @@ public class CityDTO {
     @JsonProperty("state")
     public StateDTO state;
 
+    /**
+     * Id ERO
+     */
+    @JsonProperty("idErp")
+    public String idErp;
+
 }

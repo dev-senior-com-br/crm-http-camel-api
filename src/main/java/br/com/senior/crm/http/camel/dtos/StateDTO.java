@@ -45,4 +45,11 @@ public class StateDTO {
      */
     @JsonProperty("country")
     public CountryDTO country;
+
+    /**
+     * Id ERO
+     */
+    @JsonProperty("idErp")
+    public String idErp;
+
 }

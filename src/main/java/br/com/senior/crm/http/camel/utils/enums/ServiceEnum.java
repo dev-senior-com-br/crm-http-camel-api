@@ -6,7 +6,8 @@ public enum ServiceEnum
 {
     ACCOUNT("account"),
     OPPORTUNITY("opportunity"),
-    BASE_RECORDS("basic_records");
+    BASE_RECORDS("basic_records"),
+    CRM_INTEGRATION_MANAGEMENT("crm_integration_management");
 
     @Getter
     private String path;
