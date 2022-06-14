@@ -46,5 +46,4 @@ public class LogIntegration extends ErrorResponseEntity {
 
     @JsonProperty("dthalt")
     private String dthalt;
-
 }
