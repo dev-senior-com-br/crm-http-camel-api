@@ -49,6 +49,6 @@ public class AccountHistoryIntegration extends ErrorResponseEntity
      * Conta Integrada
      */
     @JsonProperty("account")
-    private BasicAccountDTO account;
+    private Long account;
 
 }
