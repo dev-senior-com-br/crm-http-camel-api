@@ -15,7 +15,7 @@ public class AccountParamsConstant extends ErpParamsConstant {
         BASE_URL_ERP,
         USERNAME_ERP,
         PASSWORD_ERP,
-        CONNECTION_NAME,
+        CONNECTION_ERP,
         TYPE_ACCOUNT,
         ACTION_REMOVE,
         FIELDS_ACCOUNT,
