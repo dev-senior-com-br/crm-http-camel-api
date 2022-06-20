@@ -3,6 +3,7 @@ package br.com.senior.crm.http.camel.services.impl;
 import br.com.senior.crm.http.camel.entities.account.AccountDefinition;
 import br.com.senior.crm.http.camel.entities.account.AccountDefinitionCollection;
 import br.com.senior.crm.http.camel.utils.constants.AccountParamsConstant;
+import br.com.senior.crm.http.camel.utils.constants.HeadersConstants;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
@@ -23,22 +24,20 @@ public class FilterFields {
     @Getter
     private final String directResponse = "direct:crm-filter-fields-response-".concat(id);
 
-    //private static String DIRECT_END_REST = "direct:crm-filter-fields-end-rest";
+    private static final String MESSAGE_ACCOUNT_MUST_BE_CLIENT_PT_BR = "El tipo de definición de cuenta debe ser del tipo %s.";
+    private static final String MESSAGE_ACCOUNT_MUST_BE_CLIENT_ES_CO = "O tipo da conta deve ser %s.";
 
-    public static final String PROPERTY_FILTER_SUCCESS = "property:filter-fields-is-valid";
+    public static final String PROPERTY_IS_VALID = "property:filter-fields-is-valid";
+
+    public static final String PROPERTY_MESSAGE = "property:filter-fields-message";
+
 
     public void prepare() {
         builder
             .from(directImpl)
-            .process(exchange -> exchange.setProperty(PROPERTY_FILTER_SUCCESS, filter(exchange)))
+            .process(exchange -> exchange.setProperty(PROPERTY_IS_VALID, filter(exchange)))
+            .to(directResponse)
         ;
-
-//        builder.
-//            from(DIRECT_END_REST)
-//            .log("Não passou no filtro")
-//            .process(exchange -> exchange.getMessage().setBody(null))
-//            .endRest()
-//        ;
     }
 
     private Boolean filter(Exchange exchange) {//
@@ -55,6 +54,20 @@ public class FilterFields {
         for (AccountDefinition accountDefinition : collection.definitions) {//
             if (isValid.equals(Boolean.FALSE)) {//
                 isValid = accountDefinition.getAccountType().getId().equals(typeAccount);//
+                String integrationName = (String) exchange.getMessage().getHeader(HeadersConstants.INTEGRATION);
+
+                if (integrationName.contains("novasoft")) {
+                    exchange.setProperty(
+                        PROPERTY_MESSAGE,
+                        String.format(MESSAGE_ACCOUNT_MUST_BE_CLIENT_ES_CO, accountDefinition.getAccountType().getName())
+                    );
+                } else {
+                    exchange.setProperty(
+                        PROPERTY_MESSAGE,
+                        String.format(MESSAGE_ACCOUNT_MUST_BE_CLIENT_PT_BR, accountDefinition.getAccountType().getName())
+                    );
+                }
+
                 log.info(//
                     "Comparative between account type: Definition {} with type account {} and parameter type account {}",//
                     accountDefinition.getId(),//
