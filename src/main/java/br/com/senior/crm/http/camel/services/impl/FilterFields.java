@@ -24,8 +24,8 @@ public class FilterFields {
     @Getter
     private final String directResponse = "direct:crm-filter-fields-response-".concat(id);
 
-    private static final String MESSAGE_ACCOUNT_MUST_BE_CLIENT_PT_BR = "El tipo de definición de cuenta debe ser del tipo %s.";
-    private static final String MESSAGE_ACCOUNT_MUST_BE_CLIENT_ES_CO = "O tipo da conta deve ser %s.";
+    private static final String MESSAGE_ACCOUNT_CANNOT_BE_INTEGRATED_PT_BR = "O tipo de conta %s não pode ser integrado.";
+    private static final String MESSAGE_ACCOUNT_CANNOT_BE_INTEGRATED_ES_CO = "El tipo de cuenta %s no se puede fusionar.";
 
     public static final String PROPERTY_IS_VALID = "property:filter-fields-is-valid";
 
@@ -59,12 +59,12 @@ public class FilterFields {
                 if (integrationName.contains("novasoft")) {
                     exchange.setProperty(
                         PROPERTY_MESSAGE,
-                        String.format(MESSAGE_ACCOUNT_MUST_BE_CLIENT_ES_CO, accountDefinition.getAccountType().getName())
+                        String.format(MESSAGE_ACCOUNT_CANNOT_BE_INTEGRATED_ES_CO, accountDefinition.getAccountType().getName())
                     );
                 } else {
                     exchange.setProperty(
                         PROPERTY_MESSAGE,
-                        String.format(MESSAGE_ACCOUNT_MUST_BE_CLIENT_PT_BR, accountDefinition.getAccountType().getName())
+                        String.format(MESSAGE_ACCOUNT_CANNOT_BE_INTEGRATED_PT_BR, accountDefinition.getAccountType().getName())
                     );
                 }
 
