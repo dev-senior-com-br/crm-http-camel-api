@@ -31,89 +31,89 @@ public class AccountAddress extends ErrorResponseEntity {
      * Código de identificação
      */
     @JsonProperty("id")
-    public Long id;
+    private Long id;
 
     /**
      * Conta do endereço
      */
     @JsonProperty("account")
-    public BasicAccountDTO account;
+    private BasicAccountDTO account;
 
     /**
      * É o endereço principal da conta
      */
     @JsonProperty("mainAddress")
-    public Boolean mainAddress;
+    private Boolean mainAddress;
 
     /**
      * Tipo de endereço
      */
     @JsonProperty("addressType")
-    public AddressTypeDTO addressType;
+    private AddressTypeDTO addressType;
 
     /**
      * Endereço
      */
     @JsonProperty("address")
-    public String address;
+    private String address;
 
     /**
      * Número
      */
     @JsonProperty("number")
-    public Long number;
+    private String number;
 
     /**
      * Complemento
      */
     @JsonProperty("complement")
-    public String complement;
+    private String complement;
 
     /**
      * Bairro
      */
     @JsonProperty("district")
-    public String district;
+    private String district;
 
     /**
      * Cidade
      */
     @JsonProperty("city")
-    public CityDTO city;
+    private CityDTO city;
 
     /**
      * CEP
      */
     @JsonProperty("cepCode")
-    public String cepCode;
+    private String cepCode;
 
     /**
      * ZIP
      */
     @JsonProperty("zipCode")
-    public String zipCode;
+    private String zipCode;
 
     /**
      * Latitude
      */
     @JsonProperty("latitude")
-    public Double latitude;
+    private Double latitude;
 
     /**
      * Longitude
      */
     @JsonProperty("longitude")
-    public Double longitude;
+    private Double longitude;
 
     /**
      * Status do endereço
      */
     @JsonProperty("active")
-    public Boolean active;
+    private Boolean active;
 
     /**
      * Campos customizados
      */
     @JsonProperty("customFields")
-    public String customFields;
+    private String customFields;
 }
