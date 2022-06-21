@@ -55,6 +55,7 @@ public class FilterFields {
 
         builder.from(DIRECT_GET_ACCOUNT_TYPE)
             .routeId("Gets the account type.")
+            .process(exchange -> exchange.setProperty(AccountDefinitionCollection.class.toString(), exchange.getMessage().getBody()))
             .process(AuthenticationAPI::addAuthorization)
             .process(exchange -> exchange.getMessage().setBody(null))
             .process(exchange -> getAccountType.setPrimitiveComplement(exchange.getProperty(AccountParamsConstant.TYPE_ACCOUNT, "0", String.class), PrimitiveComplementEnum.PARAMETER))
@@ -66,19 +67,18 @@ public class FilterFields {
         ;
     }
 
-    private Boolean filter(Exchange exchange) {//
-        return exchange.getMessage().getBody() instanceof AccountDefinitionCollection//
-            ? this.filterAccountDefinition(exchange)//
-            : Boolean.FALSE;//
+    private Boolean filter(Exchange exchange) {
+        return this.filterAccountDefinition(exchange);//
     }
 
     private Boolean filterAccountDefinition(Exchange exchange) {
-        AccountDefinitionCollection collection = exchange.getMessage().getBody(AccountDefinitionCollection.class);//
+        AccountDefinitionCollection collection = exchange.getProperty(AccountDefinitionCollection.class.toString(), null, AccountDefinitionCollection.class);//
         Long typeAccount = exchange.getProperty(AccountParamsConstant.TYPE_ACCOUNT, "0", Long.class);//
         Boolean isValid = false;//
 
         for (AccountDefinition accountDefinition : collection.definitions) {//
             if (isValid.equals(Boolean.FALSE)) {//
+
                 isValid = accountDefinition.getAccountType().getId().equals(typeAccount);//
                 String integrationName = (String) exchange.getMessage().getHeader(HeadersConstants.INTEGRATION);
                 AccountTypeDTO accountTypeDTO = exchange.getProperty(AccountTypeDTO.class.toString(), null, AccountTypeDTO.class);
