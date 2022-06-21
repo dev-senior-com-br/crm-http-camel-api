@@ -28,7 +28,7 @@ public class FormatProperty {
      * o valor do field para o property
      * passado. Ele converte o body
      * da {@link Exchange} para um
-     * {@link Map}<String,Object>
+     * {@link Map}
      * e tenta recuperar o field
      * de dentro desse Map,
      * se ele conseguir ele irá
