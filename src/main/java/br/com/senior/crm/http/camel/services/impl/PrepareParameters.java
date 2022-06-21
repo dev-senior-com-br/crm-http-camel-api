@@ -9,26 +9,28 @@ import org.json.JSONObject;
 import java.util.Base64;
 import java.util.List;
 
-public class PrepareParameters  {
 
-    private PrepareParameters(){}
+public class PrepareParameters {
+
+    private PrepareParameters() {
+    }
 
     private static final String HEADER_PARAMS = "X-Param-";
 
-    public static void prepare(Exchange exchange, List<String> params)
-    {
+    public static void prepare(Exchange exchange, List<String> params) throws RuntimeException {
         Message message = exchange.getMessage();
 
         params.forEach(param -> {
             String paramComplete = HEADER_PARAMS + param;
             if (message.getHeader(paramComplete) != null) {
                 exchange.setProperty(param, decode(message.getHeader(paramComplete).toString()));
+            } else {
+                throw new RuntimeException(String.format("Parameter %s is required.", param));
             }
         });
     }
 
-    private static Object decode(String valueEncoded)
-    {
+    private static Object decode(String valueEncoded) {
         byte[] valueDecoded = Base64.getDecoder().decode(valueEncoded);
         String value = new String(valueDecoded);
 
@@ -52,8 +54,7 @@ public class PrepareParameters  {
         return true;
     }
 
-    private static boolean isJsonArray(String json)
-    {
+    private static boolean isJsonArray(String json) {
         try {
             new JSONArray(json);
         } catch (JSONException ex1) {
