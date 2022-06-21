@@ -17,6 +17,7 @@ public enum PrimitiveEnum {
     // Opportunity
 
     // Basic Records
+    ACCOUNT_TYPE("accountType"),
 
     // Integration Management
     LIST_LOG_BY_INTEGRATION("listLogByIntegration"),

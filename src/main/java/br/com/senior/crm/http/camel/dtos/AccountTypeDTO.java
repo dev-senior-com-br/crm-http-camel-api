@@ -20,17 +20,45 @@ import org.apache.camel.component.jackson.JacksonDataFormat;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AccountTypeDTO {
 
-    public static final JacksonDataFormat ACCOUNT_TYPE_DTO_FORMAT = new JacksonDataFormat(AccountTypeDTO.class);
+    public static final JacksonDataFormat JACKSON_DATA_FORMAT = new JacksonDataFormat(AccountTypeDTO.class);
 
     /**
      * Código de identificação
      */
     @JsonProperty("id")
-    public Long id;
+    private Long id;
 
     /**
      * Nome do tipo da Conta
      */
     @JsonProperty("name")
-    public String name;
+    private String name;
+
+    /**
+     * Se esse tipo
+     * de conta está
+     * ativo ou não
+     */
+    @JsonProperty("active")
+    private Boolean active;
+
+    /**
+     * Icone do tipo
+     * de conta
+     */
+    @JsonProperty("icon")
+    private String icon;
+
+    /**
+     * Cor desse tipo
+     * de conta.
+     */
+    @JsonProperty("color")
+    private String color;
+
+    /**
+     * Campos customizados.
+     */
+    @JsonProperty("customFields")
+    private String customFields;
 }
