@@ -32,8 +32,8 @@ public class CacheAccount {
         CACHE.put(idAccount, idAccount);
     }
 
-    public static boolean isCached(String idAccount) {
-        return !CACHE.get(idAccount).isEmpty();
+    public static boolean hasCache(String idAccount) {
+        return CACHE.get(idAccount) != null;
     }
 
     public static void removeCache(String idAccount) {
