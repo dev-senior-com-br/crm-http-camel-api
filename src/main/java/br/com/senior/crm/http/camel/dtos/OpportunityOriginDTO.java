@@ -27,4 +27,16 @@ public class OpportunityOriginDTO {
      */
     @JsonProperty("id")
     public Long id;
+
+    /**
+     * Nome da origem da oportunidade
+     */
+    @JsonProperty("name")
+    public String name;
+
+    /**
+     * Indicativo se a origem da oportunidade está ativa
+     */
+    @JsonProperty("active")
+    public Boolean active;
 }

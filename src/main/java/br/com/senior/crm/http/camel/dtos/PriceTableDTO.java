@@ -40,4 +40,10 @@ public class PriceTableDTO {
      */
     @JsonProperty("name")
     public String name;
+
+    /**
+     * Indicativo se a tabela de preço está ativa
+     */
+    @JsonProperty("active")
+    public String active;
 }

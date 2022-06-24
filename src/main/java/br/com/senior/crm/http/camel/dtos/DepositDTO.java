@@ -33,4 +33,16 @@ public class DepositDTO {
      */
     @JsonProperty("id")
     public String idErp;
+
+    /**
+     * Nome do depósito
+     */
+    @JsonProperty("name")
+    public String name;
+
+    /**
+     * Indicativo se o depósito está ativo
+     */
+    @JsonProperty("active")
+    public Boolean active;
 }

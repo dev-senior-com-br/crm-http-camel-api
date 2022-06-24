@@ -39,4 +39,10 @@ public class OpportunityDTO {
      */
     @JsonProperty("orderNumber")
     public String orderNumber;
+
+    /**
+     * Nome da oportunidade
+     */
+    @JsonProperty("name")
+    public String name;
 }

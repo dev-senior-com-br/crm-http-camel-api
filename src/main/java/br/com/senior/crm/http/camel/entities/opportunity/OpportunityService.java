@@ -1,17 +1,20 @@
 package br.com.senior.crm.http.camel.entities.opportunity;
 
+import org.apache.camel.component.jackson.JacksonDataFormat;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import br.com.senior.crm.http.camel.dtos.OpportunityDTO;
 import br.com.senior.crm.http.camel.dtos.PriceTableDTO;
 import br.com.senior.crm.http.camel.dtos.ProposalDTO;
 import br.com.senior.crm.http.camel.dtos.ServiceDTO;
+import br.com.senior.crm.http.camel.dtos.UserDTO;
 import br.com.senior.crm.http.camel.entities.ErrorResponseEntity;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import io.quarkus.runtime.annotations.RegisterForReflection;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import org.apache.camel.component.jackson.JacksonDataFormat;
 
 /**
  * Entidade de serviços - Entrada
@@ -68,6 +71,18 @@ public class OpportunityService extends ErrorResponseEntity {
     public PriceTableDTO priceTable;
 
     /**
+     * Cadastro do operador da oportunidade
+     */
+    @JsonProperty("operatorRegistration")
+    public UserDTO operatorRegistration;
+
+    /**
+     * Usuário que alterou
+     */
+    @JsonProperty("operatorChange")
+    public UserDTO operatorChange;
+
+    /**
      * Valor da vensa do produto na proposta
      */
     @JsonProperty("saleValue")
@@ -78,12 +93,6 @@ public class OpportunityService extends ErrorResponseEntity {
      */
     @JsonProperty("discountValue")
     public Double discountValue;
-
-    /**
-     * Percential de desconto do produto
-     */
-    @JsonProperty("discountPercentage")
-    public Double discountPercentage;
 
     /**
      * Informativo de exibe o valor do produto na proposta

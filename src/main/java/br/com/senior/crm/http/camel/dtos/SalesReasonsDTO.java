@@ -27,4 +27,16 @@ public class SalesReasonsDTO {
      */
     @JsonProperty("id")
     public Long id;
+
+    /**
+     * Nome do motivo da venda
+     */
+    @JsonProperty("name")
+    public String name;
+
+    /**
+     * Indicativo se o motivo da venda está ativo
+     */
+    @JsonProperty("active")
+    public Boolean active;
 }

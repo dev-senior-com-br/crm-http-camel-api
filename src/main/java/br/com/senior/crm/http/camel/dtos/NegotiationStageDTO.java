@@ -27,4 +27,16 @@ public class NegotiationStageDTO {
      */
     @JsonProperty("stage")
     public Long stage;
+
+    /**
+     * Nome do estágio
+     */
+    @JsonProperty("name")
+    public Long name;
+
+    /**
+     * Percentual do estágio
+     */
+    @JsonProperty("percentage")
+    public Long percentage;
 }
