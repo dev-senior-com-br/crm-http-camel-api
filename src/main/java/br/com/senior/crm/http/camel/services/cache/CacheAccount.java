@@ -22,21 +22,21 @@ public class CacheAccount {
 
     private static final CacheManager CACHE_MANAGER = newCacheManagerBuilder().build(true);
 
-    private static final Cache<String, Integer> CACHE = CACHE_MANAGER.createCache(CACHE_NAME, //
-        newCacheConfigurationBuilder(String.class, Integer.class, //
+    private static final Cache<String, String> CACHE = CACHE_MANAGER.createCache(CACHE_NAME, //
+        newCacheConfigurationBuilder(String.class, String.class, //
             ResourcePoolsBuilder.newResourcePoolsBuilder().heap(TOKEN_CACHE_SIZE, B).build()) //
             .withExpiry(timeToLiveExpiration(Duration.ofSeconds(REFRESH_TOKEN_TTL))) //
             .build());
 
-    public static void setCache(Integer idAccount) {
-        CACHE.put(idAccount.toString(), idAccount);
+    public static void setCache(String idAccount) {
+        CACHE.put(idAccount, idAccount);
     }
 
-    public static boolean isCached(Integer idAccount) {
-        return !CACHE.get(idAccount.toString()).toString().isEmpty();
+    public static boolean isCached(String idAccount) {
+        return !CACHE.get(idAccount).isEmpty();
     }
 
-    public static void removeCache(Integer idAccount) {
-        CACHE.remove(idAccount.toString());
+    public static void removeCache(String idAccount) {
+        CACHE.remove(idAccount);
     }
 }
