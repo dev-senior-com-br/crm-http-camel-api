@@ -40,4 +40,10 @@ public class PaymentTermDTO {
      */
     @JsonProperty("name")
     public String name;
+
+    /**
+     * Indicativo se o termo de pagamento está ativo
+     */
+    @JsonProperty("active")
+    public Boolean active;
 }

@@ -27,4 +27,16 @@ public class LossReasonDTO {
      */
     @JsonProperty("id")
     public Long id;
+
+    /**
+     * Nome do motivo da perda
+     */
+    @JsonProperty("name")
+    public String name;
+
+    /**
+     * Indicativo se o motivo da perda está ativo
+     */
+    @JsonProperty("active")
+    public Boolean active;
 }

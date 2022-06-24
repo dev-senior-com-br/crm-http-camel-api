@@ -33,4 +33,22 @@ public class ContactDTO {
      */
     @JsonProperty("idErp")
     public String idErp;
+
+    /**
+     * Nome do contato
+     */
+    @JsonProperty("name")
+    public String name;
+
+    /**
+     * E-mail do contato
+     */
+    @JsonProperty("email")
+    public String email;
+
+    /**
+     * Indicativo se o contato está ativo
+     */
+    @JsonProperty("active")
+    public Boolean active;
 }

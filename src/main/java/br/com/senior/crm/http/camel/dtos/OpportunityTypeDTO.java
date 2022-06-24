@@ -34,4 +34,22 @@ public class OpportunityTypeDTO {
      */
     @JsonProperty("idErp")
     public String idErp;
+
+    /**
+     * Nome do tipo de oportunidade
+     */
+    @JsonProperty("name")
+    public String name;
+
+    /**
+     * Observação do tipo de oportunidade
+     */
+    @JsonProperty("note")
+    public String note;
+
+    /**
+     * Indicativo se o tipo de oportunidade está ativo
+     */
+    @JsonProperty("active")
+    public Boolean active;
 }

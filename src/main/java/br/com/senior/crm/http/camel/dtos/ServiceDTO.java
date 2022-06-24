@@ -33,4 +33,16 @@ public class ServiceDTO {
      */
     @JsonProperty("serviceCode")
     public String serviceCode;
+
+    /**
+     * Nome do serviço
+     */
+    @JsonProperty("name")
+    public String name;
+
+    /**
+     * Indicativo de o serviço está ativo
+     */
+    @JsonProperty("active")
+    public Boolean active;
 }

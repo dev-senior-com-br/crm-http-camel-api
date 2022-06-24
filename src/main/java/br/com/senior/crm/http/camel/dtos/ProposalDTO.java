@@ -39,4 +39,10 @@ public class ProposalDTO {
      */
     @JsonProperty("orderNumber")
     public String orderNumber;
+
+    /**
+     * Nome da proposta
+     */
+    @JsonProperty("name")
+    public String name;
 }

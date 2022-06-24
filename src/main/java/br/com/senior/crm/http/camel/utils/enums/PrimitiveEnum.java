@@ -15,6 +15,13 @@ public enum PrimitiveEnum {
     GET_ACCOUNT_HISTORY_INTEGRATION("getHistoryIntegrationByAccount"),
 
     // Opportunity
+    OPPORTUNITY("opportunity"),
+    OPPORTUNITY_PROPOSAL("opportunityProposal"),
+    OPPORTUNITY_PRODUCT("opportunityProduct"),
+    OPPORTUNITY_SERVICE("opportunityService"),
+    LIST_PROPOSAL_BY_OPPORTUNITY_AND_STATUS("listProposalByOpportunityAndStatus"),
+    LIST_PRODUCT_BY_PROPOSAL("listProductByProposal"),
+    LIST_SERVICE_BY_PROPOSAL("listServiceByProposal"),
 
     // Basic Records
     ACCOUNT_TYPE("accountType"),
