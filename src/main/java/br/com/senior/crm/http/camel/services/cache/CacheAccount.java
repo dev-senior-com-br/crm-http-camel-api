@@ -33,7 +33,7 @@ public class CacheAccount {
     }
 
     public static boolean hasCache(String idAccount) {
-        return CACHE.get(idAccount) != null;
+        return CACHE.containsKey(idAccount);
     }
 
     public static void removeCache(String idAccount) {
