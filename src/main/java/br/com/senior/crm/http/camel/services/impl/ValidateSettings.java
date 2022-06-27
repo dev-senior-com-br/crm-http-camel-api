@@ -1,6 +1,6 @@
 package br.com.senior.crm.http.camel.services.impl;
 
-import br.com.senior.crm.http.camel.services.ValidateSettings.ValidateSettingsInterface;
+import br.com.senior.crm.http.camel.services.validateSettings.ValidateSettingsInterface;
 import br.com.senior.crm.http.camel.utils.enums.ValidateSettingsDirectEnum;
 import lombok.Getter;
 import lombok.NonNull;
@@ -8,7 +8,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.camel.builder.RouteBuilder;
 
-import java.lang.reflect.Constructor;
 import java.util.UUID;
 
 @Slf4j
@@ -22,25 +21,7 @@ public class ValidateSettings {
     @Getter
     private final String directResponse = "direct:crm-validate-settings-response-".concat(id);
 
-    public void prepare(String classValidateSettings, ValidateSettingsDirectEnum directValidateSettings) throws Exception {
-        Class<?> metadata;
-
-        try {
-            metadata = Class.forName(classValidateSettings);
-
-        } catch (Exception e) {
-            throw new Exception(String.format("Class ValidatorSettings %s not found", classValidateSettings));
-        }
-
-        ValidateSettingsInterface validateSettings;
-
-        try {
-            Constructor<?> constructor = metadata.getConstructor();
-            validateSettings = (ValidateSettingsInterface) constructor.newInstance(builder);
-        } catch (Exception e) {
-            throw new Exception(String.format("Class ValidatorSettings %s not implemented interface %s", classValidateSettings, ValidateSettingsInterface.class));
-        }
-
+    public void prepare(ValidateSettingsInterface validateSettings, ValidateSettingsDirectEnum directValidateSettings) throws Exception {
         validateSettings.prepare();
 
         builder

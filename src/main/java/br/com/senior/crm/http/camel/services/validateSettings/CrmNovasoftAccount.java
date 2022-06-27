@@ -1,4 +1,4 @@
-package br.com.senior.crm.http.camel.services.ValidateSettings;
+package br.com.senior.crm.http.camel.services.validateSettings;
 
 import br.com.senior.crm.http.camel.dtos.AccountTypeDTO;
 import br.com.senior.crm.http.camel.entities.account.AccountDefinition;
