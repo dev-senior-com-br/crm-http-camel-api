@@ -22,6 +22,9 @@ public class NegotiationStageDTO {
 
     public static final JacksonDataFormat NEGOTIATION_STATE_DTO_FORMAT = new JacksonDataFormat(NegotiationStageDTO.class);
 
+    @JsonProperty("stage")
+    private Long stage;
+
     /**
      * Nome do estágio
      * da negociação
@@ -30,15 +33,8 @@ public class NegotiationStageDTO {
     private String name;
 
     /**
-     * Estágio
-     */
-    @JsonProperty("stage")
-    private Long stage;
-
-    /**
-     * Porcentagem
-     * do Estágio de negociação.
+     * Percentual do estágio
      */
     @JsonProperty("percentage")
-    private Long percentage;
+    public Long percentage;
 }

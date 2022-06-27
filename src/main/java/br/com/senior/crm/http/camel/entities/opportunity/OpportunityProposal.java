@@ -1,14 +1,21 @@
 package br.com.senior.crm.http.camel.entities.opportunity;
 
-import br.com.senior.crm.http.camel.dtos.*;
-import br.com.senior.crm.http.camel.entities.ErrorResponseEntity;
+import org.apache.camel.component.jackson.JacksonDataFormat;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+import br.com.senior.crm.http.camel.dtos.CarrierDTO;
+import br.com.senior.crm.http.camel.dtos.CarrierDispatchDTO;
+import br.com.senior.crm.http.camel.dtos.OpportunityDTO;
+import br.com.senior.crm.http.camel.dtos.PaymentTermDTO;
+import br.com.senior.crm.http.camel.dtos.TemplateDTO;
+import br.com.senior.crm.http.camel.dtos.UserDTO;
+import br.com.senior.crm.http.camel.entities.ErrorResponseEntity;
 import io.quarkus.runtime.annotations.RegisterForReflection;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import org.apache.camel.component.jackson.JacksonDataFormat;
 
 /**
  * Entidade de propostas - Entrada
@@ -35,10 +42,16 @@ public class OpportunityProposal extends ErrorResponseEntity {
     public OpportunityDTO opportunity;
 
     /**
-     * Data e hora da criação da abertura da oportunidade
+     * Data da criação da abertura da oportunidade
      */
-    @JsonProperty("dateTime")
-    public String dateTime;
+    @JsonProperty("date")
+    public String date;
+
+    /**
+     * Hora da criação da abertura da oportunidade
+     */
+    @JsonProperty("hour")
+    public String hour;
 
     /**
      * Número da proposta no CRM
@@ -80,7 +93,7 @@ public class OpportunityProposal extends ErrorResponseEntity {
      * Emissor/criador da proposta
      */
     @JsonProperty("issuer")
-    public IssuerDTO issuer;
+    public UserDTO issuer;
 
     /**
      * Status da proposta
@@ -128,7 +141,7 @@ public class OpportunityProposal extends ErrorResponseEntity {
      * Valor ou porcentagem de ZONA FRANCA da proposta
      */
     @JsonProperty("zonaFranca")
-    public String zonaFranca;
+    public String freeZone;
 
     /**
      * Transportadora

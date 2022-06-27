@@ -1,14 +1,26 @@
 package br.com.senior.crm.http.camel.entities.opportunity;
 
-import br.com.senior.crm.http.camel.dtos.*;
-import br.com.senior.crm.http.camel.entities.ErrorResponseEntity;
+import org.apache.camel.component.jackson.JacksonDataFormat;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+import br.com.senior.crm.http.camel.dtos.BasicAccountDTO;
+import br.com.senior.crm.http.camel.dtos.BusinessTypeDTO;
+import br.com.senior.crm.http.camel.dtos.CompanyBranchDTO;
+import br.com.senior.crm.http.camel.dtos.ContactDTO;
+import br.com.senior.crm.http.camel.dtos.LossReasonDTO;
+import br.com.senior.crm.http.camel.dtos.NegotiationStageDTO;
+import br.com.senior.crm.http.camel.dtos.OpportunityOriginDTO;
+import br.com.senior.crm.http.camel.dtos.OpportunitySubtypeDTO;
+import br.com.senior.crm.http.camel.dtos.OpportunityTypeDTO;
+import br.com.senior.crm.http.camel.dtos.SalesReasonsDTO;
+import br.com.senior.crm.http.camel.dtos.UserDTO;
+import br.com.senior.crm.http.camel.entities.ErrorResponseEntity;
 import io.quarkus.runtime.annotations.RegisterForReflection;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import org.apache.camel.component.jackson.JacksonDataFormat;
 
 /**
  * Entidade referente a Oportunidade
@@ -71,10 +83,16 @@ public class Opportunity extends ErrorResponseEntity {
     public BusinessTypeDTO businessType;
 
     /**
-     * Data e hora da criação da abertura da oportunidade
+     * Data da criação da abertura da oportunidade
      */
-    @JsonProperty("dateTime")
-    public String dateTime;
+    @JsonProperty("date")
+    public String date;
+
+    /**
+     * Hora da criação da abertura da oportunidade
+     */
+    @JsonProperty("hour")
+    public String hour;
 
     /**
      * Origem da oportunidade
@@ -86,7 +104,7 @@ public class Opportunity extends ErrorResponseEntity {
      * Responsável pela oportunidade
      */
     @JsonProperty("responsible")
-    public ResponsibleDTO responsible;
+    public UserDTO responsible;
 
     /**
      * Estágio da oportunidade
@@ -106,6 +124,18 @@ public class Opportunity extends ErrorResponseEntity {
     @JsonProperty("salesReasons")
     public SalesReasonsDTO salesReasons;
 
+    /**
+     * Usuário que cadastrou
+     */
+    @JsonProperty("operatorRegistration")
+    public UserDTO operatorRegistration;
+
+    /**
+     * Usuário que alterou
+     */
+    @JsonProperty("operatorChange")
+    public UserDTO operatorChange;
+    
     /**
      * Probabilidade de fechamento da oportunidade
      */
@@ -141,12 +171,6 @@ public class Opportunity extends ErrorResponseEntity {
      */
     @JsonProperty("expectedDeliveryString")
     public String expectedDeliveryString;
-
-    /**
-     * Data efetiva para a entrega dos produtos
-     */
-    @JsonProperty("effectiveDeliveryString")
-    public String effectiveDeliveryString;
 
     /**
      * Valor previsto da oportunidade

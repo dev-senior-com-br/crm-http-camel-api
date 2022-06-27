@@ -39,4 +39,22 @@ public class ProductDTO {
      */
     @JsonProperty("productDerivationCode")
     public String productDerivationCode;
+
+    /**
+     * Nome do produto
+     */
+    @JsonProperty("name")
+    public String name;
+
+    /**
+     * Nome derivado do produto
+     */
+    @JsonProperty("nameDerivation")
+    public String nameDerivation;
+
+    /**
+     * Indicativo se o produto está ativo
+     */
+    @JsonProperty("active")
+    public Boolean active;
 }

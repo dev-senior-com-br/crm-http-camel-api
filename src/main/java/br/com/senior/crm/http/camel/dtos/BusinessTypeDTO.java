@@ -28,4 +28,16 @@ public class BusinessTypeDTO {
      */
     @JsonProperty("id")
     public Long id;
+
+    /**
+     * Nome da modalidade de negócio
+     */
+    @JsonProperty("name")
+    public String name;
+
+    /**
+     * Indicativo se a modalidade de negócio está ativa
+     */
+    @JsonProperty("active")
+    public Boolean active;
 }

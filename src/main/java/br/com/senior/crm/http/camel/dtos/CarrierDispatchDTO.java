@@ -36,8 +36,14 @@ public class CarrierDispatchDTO {
     public String idErp;
 
     /**
-     * Nome da operadora de dispacho
+     * Nome da transportadora de dispacho
      */
     @JsonProperty("name")
     public String name;
+
+    /**
+     * Indicativo se a transportadora de redespacho está ativa
+     */
+    @JsonProperty("active")
+    public Boolean active;
 }

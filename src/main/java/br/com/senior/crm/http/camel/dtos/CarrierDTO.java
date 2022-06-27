@@ -40,4 +40,10 @@ public class CarrierDTO {
      */
     @JsonProperty("name")
     public String name;
+
+    /**
+     * Indicativo se a transportadora está ativa
+     */
+    @JsonProperty("active")
+    public Boolean active;
 }
