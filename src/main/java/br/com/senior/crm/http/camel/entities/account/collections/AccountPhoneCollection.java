@@ -1,6 +1,5 @@
 package br.com.senior.crm.http.camel.entities.account.collections;
 
-import br.com.senior.crm.http.camel.entities.ErrorResponseEntity;
 import br.com.senior.crm.http.camel.entities.account.AccountPhone;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -19,7 +18,7 @@ import java.util.List;
 @RegisterForReflection(serialization = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class AccountPhoneCollection extends ErrorResponseEntity {
+public class AccountPhoneCollection {
 
     public static final JacksonDataFormat JACKSON_DATA_FORMAT = new JacksonDataFormat(AccountPhoneCollection.class);
 

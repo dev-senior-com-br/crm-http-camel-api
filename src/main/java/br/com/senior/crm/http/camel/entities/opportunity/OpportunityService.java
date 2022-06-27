@@ -1,20 +1,13 @@
 package br.com.senior.crm.http.camel.entities.opportunity;
 
-import org.apache.camel.component.jackson.JacksonDataFormat;
-
+import br.com.senior.crm.http.camel.dtos.*;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-import br.com.senior.crm.http.camel.dtos.OpportunityDTO;
-import br.com.senior.crm.http.camel.dtos.PriceTableDTO;
-import br.com.senior.crm.http.camel.dtos.ProposalDTO;
-import br.com.senior.crm.http.camel.dtos.ServiceDTO;
-import br.com.senior.crm.http.camel.dtos.UserDTO;
-import br.com.senior.crm.http.camel.entities.ErrorResponseEntity;
 import io.quarkus.runtime.annotations.RegisterForReflection;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import org.apache.camel.component.jackson.JacksonDataFormat;
 
 /**
  * Entidade de serviços - Entrada
@@ -24,7 +17,7 @@ import lombok.NoArgsConstructor;
 @RegisterForReflection(serialization = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class OpportunityService extends ErrorResponseEntity {
+public class OpportunityService {
 
     public static final JacksonDataFormat JACKSON_DATA_FORMAT = new JacksonDataFormat(OpportunityService.class);
 

@@ -3,7 +3,6 @@ package br.com.senior.crm.http.camel.entities.account;
 import br.com.senior.crm.http.camel.dtos.AddressTypeDTO;
 import br.com.senior.crm.http.camel.dtos.BasicAccountDTO;
 import br.com.senior.crm.http.camel.dtos.CityDTO;
-import br.com.senior.crm.http.camel.entities.ErrorResponseEntity;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -23,7 +22,7 @@ import org.apache.camel.component.jackson.JacksonDataFormat;
 @RegisterForReflection(serialization = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class AccountAddress extends ErrorResponseEntity {
+public class AccountAddress {
 
     public static final JacksonDataFormat JACKSON_DATA_FORMAT = new JacksonDataFormat(AccountAddress.class);
 

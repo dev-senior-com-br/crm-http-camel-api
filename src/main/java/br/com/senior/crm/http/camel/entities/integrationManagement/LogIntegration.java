@@ -1,6 +1,5 @@
 package br.com.senior.crm.http.camel.entities.integrationManagement;
 
-import br.com.senior.crm.http.camel.entities.ErrorResponseEntity;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -16,7 +15,7 @@ import org.apache.camel.component.jackson.JacksonDataFormat;
 @RegisterForReflection(serialization = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class LogIntegration extends ErrorResponseEntity {
+public class LogIntegration {
 
     public static final JacksonDataFormat JACKSON_DATA_FORMAT = new JacksonDataFormat(LogIntegration.class);
 
