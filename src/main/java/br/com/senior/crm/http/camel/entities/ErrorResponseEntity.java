@@ -22,7 +22,7 @@ import org.apache.camel.component.jackson.JacksonDataFormat;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ErrorResponseEntity {
 
-    public static final JacksonDataFormat JACKSON_DATA_FORMAT = new JacksonDataFormat(ErrorResponseEntity.class);
+    public static final JacksonDataFormat ERROR_JACKSON_DATA_FORMAT = new JacksonDataFormat(ErrorResponseEntity.class);
 
     /**
      * Messagem de erro
