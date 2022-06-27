@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.camel.builder.RouteBuilder;
 
+import java.lang.reflect.Constructor;
 import java.util.UUID;
 
 @Slf4j
@@ -22,10 +23,11 @@ public class ValidateSettings {
     private final String directResponse = "direct:crm-validate-settings-response-".concat(id);
 
     public void prepare(String classValidateSettings, ValidateSettingsDirectEnum directValidateSettings) throws Exception {
-        Class<?> c;
+        Class<?> metadata;
 
         try {
-            c = Class.forName(classValidateSettings);
+            metadata = Class.forName(classValidateSettings);
+
         } catch (Exception e) {
             throw new Exception(String.format("Class ValidatorSettings %s not found", classValidateSettings));
         }
@@ -33,7 +35,8 @@ public class ValidateSettings {
         ValidateSettingsInterface validateSettings;
 
         try {
-            validateSettings = (ValidateSettingsInterface) c.newInstance();
+            Constructor<?> constructor = metadata.getConstructor();
+            validateSettings = (ValidateSettingsInterface) constructor.newInstance(builder);
         } catch (Exception e) {
             throw new Exception(String.format("Class ValidatorSettings %s not implemented interface %s", classValidateSettings, ValidateSettingsInterface.class));
         }
