@@ -2,7 +2,7 @@ package br.com.senior.crm.http.camel.services.impl;
 
 import br.com.senior.crm.http.camel.dtos.AccountTypeDTO;
 import br.com.senior.crm.http.camel.entities.account.AccountDefinition;
-import br.com.senior.crm.http.camel.entities.account.AccountDefinitionCollection;
+import br.com.senior.crm.http.camel.entities.account.collections.AccountDefinitionCollection;
 import br.com.senior.crm.http.camel.utils.constants.AccountParamsConstant;
 import br.com.senior.crm.http.camel.utils.constants.HeadersConstants;
 import br.com.senior.crm.http.camel.utils.enums.PrimitiveComplementEnum;

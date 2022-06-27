@@ -1,5 +1,7 @@
-package br.com.senior.crm.http.camel.entities.account;
+package br.com.senior.crm.http.camel.entities.account.collections;
 
+import br.com.senior.crm.http.camel.entities.ErrorResponseEntity;
+import br.com.senior.crm.http.camel.entities.account.AccountAddress;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -17,10 +19,10 @@ import java.util.List;
 @RegisterForReflection(serialization = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class AccountDefinitionCollection {
+public class AccountAddressCollection extends ErrorResponseEntity {
     
-    public static final JacksonDataFormat JACKSON_DATA_FORMAT = new JacksonDataFormat(AccountDefinitionCollection.class);
+    public static final JacksonDataFormat JACKSON_DATA_FORMAT = new JacksonDataFormat(AccountAddressCollection.class);
 
-    @JsonProperty("definitions")
-    public List<AccountDefinition> definitions;
+    @JsonProperty("addresses")
+    public List<AccountAddress> addresses;
 }
