@@ -19,6 +19,7 @@ public enum PrimitiveEnum {
     OPPORTUNITY_PROPOSAL("opportunityProposal"),
     OPPORTUNITY_PRODUCT("opportunityProduct"),
     OPPORTUNITY_SERVICE("opportunityService"),
+    LIST_PROPOSAL_BY_OPPORTUNITY("listProposalByOpportunity"),
     LIST_PROPOSAL_BY_OPPORTUNITY_AND_STATUS("listProposalByOpportunityAndStatus"),
     LIST_PRODUCT_BY_PROPOSAL("listProductByProposal"),
     LIST_SERVICE_BY_PROPOSAL("listServiceByProposal"),
