@@ -31,7 +31,7 @@ public class DepositDTO {
     /**
      * Código de identificação no sistema terceiro
      */
-    @JsonProperty("id")
+    @JsonProperty("idErp")
     private String idErp;
 
     /**
