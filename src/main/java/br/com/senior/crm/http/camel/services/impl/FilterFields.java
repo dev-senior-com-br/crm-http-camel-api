@@ -76,7 +76,7 @@ public class FilterFields {
         Long typeAccount = exchange.getProperty(AccountParamsConstant.TYPE_ACCOUNT, "0", Long.class);//
         Boolean isValid = false;//
 
-        for (AccountDefinition accountDefinition : collection.definitions) {//
+        for (AccountDefinition accountDefinition : collection.getDefinitions()) {//
             if (isValid.equals(Boolean.FALSE)) {//
 
                 isValid = accountDefinition.getAccountType().getId().equals(typeAccount);//
