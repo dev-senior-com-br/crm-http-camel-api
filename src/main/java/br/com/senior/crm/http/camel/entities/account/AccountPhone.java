@@ -27,35 +27,35 @@ public class AccountPhone {
      * Código de identificação da definição da conta no CRM
      */
     @JsonProperty("id")
-    public Long id;
+    private Long id;
 
     /**
      * A conta da definição
      */
     @JsonProperty("account")
-    public BasicAccountDTO account;
+    private BasicAccountDTO account;
 
     /**
      * Número de telefone da conta
      */
     @JsonProperty("number")
-    public String number;
+    private String number;
 
     /**
      * Tipo de telefone da conta
      */
     @JsonProperty("type")
-    public Integer type;
+    private Integer type;
 
     /**
      * Operadora de telefone da conta
      */
     @JsonProperty("operator")
-    public Integer operator;
+    private Integer operator;
 
     /**
      * É o principal telefone da conta
      */
     @JsonProperty("main")
-    public Boolean main;
+    private Boolean main;
 }

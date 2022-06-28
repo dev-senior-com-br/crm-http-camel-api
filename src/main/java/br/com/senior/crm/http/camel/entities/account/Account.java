@@ -27,167 +27,167 @@ public class Account {
      * Id de identificação
      */
     @JsonProperty("id")
-    public Long id;
+    private Long id;
 
     /**
      * Código de identificação
      */
     @JsonProperty("idErp")
-    public String idErp;
+    private String idErp;
 
     /**
      * Nome da conta
      */
     @JsonProperty("name")
-    public String name;
+    private String name;
 
     /**
      * Nome fantasia
      */
     @JsonProperty("fantasyName")
-    public String fantasyName;
+    private String fantasyName;
 
     /**
      * CNPJ da conta
      */
     @JsonProperty("cnpj")
-    public String cnpj;
+    private String cnpj;
 
     /**
      * CPF da conta
      */
     @JsonProperty("cpf")
-    public String cpf;
+    private String cpf;
 
     /**
      * RG da conta
      */
     @JsonProperty("rg")
-    public String rg;
+    private String rg;
 
     /**
      * Nit (Novasoft)
      */
     @JsonProperty("nit")
-    public String nit;
+    private String nit;
 
     /**
      * Cedula de Ciudadania (Novasoft)
      */
     @JsonProperty("citizenshipCard")
-    public String citizenshipCard;
+    private String citizenshipCard;
 
     /**
      * Passaporte (Novasoft)
      */
     @JsonProperty("passport")
-    public String passport;
+    private String passport;
 
     /**
      * Ramo de atividade
      */
     @JsonProperty("activityBranch")
-    public ActivityBranchDTO activityBranch;
+    private ActivityBranchDTO activityBranch;
 
     /**
      * Inscrição estadual
      */
     @JsonProperty("stateRegistration")
-    public String stateRegistration;
+    private String stateRegistration;
 
     /**
      * Inscrição municipal
      */
     @JsonProperty("municipalRegistration")
-    public String municipalRegistration;
+    private String municipalRegistration;
 
     /**
      * Porte da empresa
      */
     @JsonProperty("companySize")
-    public CompanySizeDTO companySize;
+    private CompanySizeDTO companySize;
 
     /**
      * URL do site da conta
      */
     @JsonProperty("url")
-    public String url;
+    private String url;
 
     /**
      * E-mail geral
      */
     @JsonProperty("generalEmail")
-    public String generalEmail;
+    private String generalEmail;
 
     /**
      * E-mail financeiro
      */
     @JsonProperty("financialEmail")
-    public String financialEmail;
+    private String financialEmail;
 
     /**
      * Data do cadastro
      */
     @JsonProperty("registerDate")
-    public String registerDate;
+    private String registerDate;
 
     /**
      * Receita anual
      */
     @JsonProperty("annualIncome")
-    public Double annualIncome;
+    private Double annualIncome;
 
     /**
      * Quantidade de funcionários
      */
     @JsonProperty("employees")
-    public Long employees;
+    private Long employees;
 
     /**
      * Tipo de pessoa
      */
     @JsonProperty("personType")
-    public PersonTypeDTO personType;
+    private PersonTypeDTO personType;
 
     /**
      * EIN
      */
     @JsonProperty("einNumber")
-    public String einNumber;
+    private String einNumber;
 
     /**
      * SSN
      */
     @JsonProperty("ssnNumber")
-    public String ssnNumber;
+    private String ssnNumber;
 
     /**
      * Grupo de empresa
      */
     @JsonProperty("companyGroup")
-    public CompanyGroupDTO companyGroup;
+    private CompanyGroupDTO companyGroup;
 
     /**
      * Origem
      */
     @JsonProperty("origin")
-    public OriginDTO origin;
+    private OriginDTO origin;
 
     /**
      * Data de nascimento/abertura
      */
     @JsonProperty("birthDate")
-    public String birthDate;
+    private String birthDate;
 
     /**
      * Status de atividade
      */
     @JsonProperty("active")
-    public Long active;
+    private Long active;
 
     /**
      * Campos customizados
      */
     @JsonProperty("customFields")
-    public String customFields;
+    private String customFields;
 }

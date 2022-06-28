@@ -28,119 +28,119 @@ public class AccountDefinition {
      * Código de identificação
      */
     @JsonProperty("id")
-    public Long id;
+    private Long id;
 
     /**
      * Empresa Filial da definição da conta
      */
     @JsonProperty("companyBranch")
-    public CompanyBranchDTO companyBranch;
+    private CompanyBranchDTO companyBranch;
 
     /**
      * A conta da definição
      */
     @JsonProperty("account")
-    public BasicAccountDTO account;
+    private BasicAccountDTO account;
 
     /**
      * Status da definição da conta,
      */
     @JsonProperty("status")
-    public StatusDTO status;
+    private StatusDTO status;
 
     /**
      * Motivo da inativação da definição da conta
      */
     @JsonProperty("inactivationReason")
-    public InactivationReasonDTO inactivationReason;
+    private InactivationReasonDTO inactivationReason;
 
     /**
      * Tipo de conta
      */
     @JsonProperty("accountType")
-    public AccountTypeDTO accountType;
+    private AccountTypeDTO accountType;
 
     /**
      * Rating da conta por definição
      */
     @JsonProperty("rating")
-    public RatingDTO rating;
+    private RatingDTO rating;
 
     /**
      * Tabela de preço padrão para a definição de conta
      */
     @JsonProperty("priceTable")
-    public PriceTableDTO priceTable;
+    private PriceTableDTO priceTable;
 
     /**
      * Transportadora padrão para a definição de conta
      */
     @JsonProperty("carrier")
-    public CarrierDTO carrier;
+    private CarrierDTO carrier;
 
     /**
      * Transportadora de redespacho padrão para a definição de conta
      */
     @JsonProperty("carrierDispatch")
-    public CarrierDispatchDTO carrierDispatch;
+    private CarrierDispatchDTO carrierDispatch;
 
     /**
      * Representante padrão para a definição de conta
      */
     @JsonProperty("representative")
-    public RepresentativeDTO representative;
+    private RepresentativeDTO representative;
 
     /**
      * Vendedor padrão para a definição de conta
      */
     @JsonProperty("seller")
-    public SellerDTO seller;
+    private SellerDTO seller;
 
     /**
      * Prazo de pagamento padrão para a definição de conta
      */
     @JsonProperty("paymentTerm")
-    public PaymentTermDTO paymentTerm;
+    private PaymentTermDTO paymentTerm;
 
     /**
      * Previsão de meta de vendas para o cliente
      */
     @JsonProperty("salesGoal")
-    public Double salesGoal;
+    private Double salesGoal;
 
     /**
      * Observações da definição de conta
      */
     @JsonProperty("note")
-    public String note;
+    private String note;
 
     /**
      * Informa se a conta por definição recebe emails do sistema
      */
     @JsonProperty("receiveEmail")
-    public Boolean receiveEmail;
+    private Boolean receiveEmail;
 
     /**
      * Informa se a conta por definição recebe pesquisas do sistema
      */
     @JsonProperty("receiveSurvey")
-    public Boolean receiveSurvey;
+    private Boolean receiveSurvey;
 
     /**
      * Informa se a conta por definição recebe e monitora emails do sistema
      */
     @JsonProperty("receiveTrackEmail")
-    public Boolean receiveTrackEmail;
+    private Boolean receiveTrackEmail;
 
     /**
      * Data de quando a conta virou cliente
      */
     @JsonProperty("clientSince")
-    public String clientSince;
+    private String clientSince;
 
     /**
      * Campos customizados desse cadastro
      */
     @JsonProperty("customFields")
-    public String customFields;
+    private String customFields;
 }

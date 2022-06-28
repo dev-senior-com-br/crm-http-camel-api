@@ -23,5 +23,5 @@ public class AccountPhoneCollection {
     public static final JacksonDataFormat JACKSON_DATA_FORMAT = new JacksonDataFormat(AccountPhoneCollection.class);
 
     @JsonProperty("telephones")
-    public List<AccountPhone> telephones;
+    private List<AccountPhone> telephones;
 }

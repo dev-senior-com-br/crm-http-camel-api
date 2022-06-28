@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.quarkus.runtime.annotations.RegisterForReflection;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.apache.camel.component.jackson.JacksonDataFormat;
 
@@ -14,6 +15,7 @@ import org.apache.camel.component.jackson.JacksonDataFormat;
  */
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 @RegisterForReflection(serialization = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -25,185 +27,185 @@ public class Opportunity {
      * Código de identificação no CRM
      */
     @JsonProperty("id")
-    public Long id;
+    private Long id;
 
     /**
      * Empresa filial da oportunidade
      */
     @JsonProperty("companyBranch")
-    public CompanyBranchDTO companyBranch;
+    private CompanyBranchDTO companyBranch;
 
     /**
      * Conta da oportunidade
      */
     @JsonProperty("account")
-    public BasicAccountDTO account;
+    private BasicAccountDTO account;
 
     /**
      * Contato da oportunidade
      */
     @JsonProperty("contact")
-    public ContactDTO contact;
+    private ContactDTO contact;
 
     /**
      * Nome da oportunidade
      */
     @JsonProperty("opportunityName")
-    public String opportunityName;
+    private String opportunityName;
 
     /**
      * Tipo da oportunidade
      */
     @JsonProperty("opportunityType")
-    public OpportunityTypeDTO opportunityType;
+    private OpportunityTypeDTO opportunityType;
 
     /**
      * Subtipo da oportunidade
      */
     @JsonProperty("opportunitySubtype")
-    public OpportunitySubtypeDTO opportunitySubtype;
+    private OpportunitySubtypeDTO opportunitySubtype;
 
     /**
      * Modalidade de negócio
      */
     @JsonProperty("businessType")
-    public BusinessTypeDTO businessType;
+    private BusinessTypeDTO businessType;
 
     /**
      * Data da criação da abertura da oportunidade
      */
     @JsonProperty("date")
-    public String date;
+    private String date;
 
     /**
      * Hora da criação da abertura da oportunidade
      */
     @JsonProperty("hour")
-    public String hour;
+    private String hour;
 
     /**
      * Origem da oportunidade
      */
     @JsonProperty("opportunityOrigin")
-    public OpportunityOriginDTO opportunityOrigin;
+    private OpportunityOriginDTO opportunityOrigin;
 
     /**
      * Responsável pela oportunidade
      */
     @JsonProperty("responsible")
-    public UserDTO responsible;
+    private UserDTO responsible;
 
     /**
      * Estágio da oportunidade
      */
     @JsonProperty("negotiationStage")
-    public NegotiationStageDTO negotiationStage;
+    private NegotiationStageDTO negotiationStage;
 
     /**
      * Motivo da perda da oportunidade
      */
     @JsonProperty("lossReason")
-    public LossReasonDTO lossReason;
+    private LossReasonDTO lossReason;
 
     /**
      * Motivo da venda da oportunidade
      */
     @JsonProperty("salesReasons")
-    public SalesReasonsDTO salesReasons;
+    private SalesReasonsDTO salesReasons;
 
     /**
      * Usuário que cadastrou
      */
     @JsonProperty("operatorRegistration")
-    public UserDTO operatorRegistration;
+    private UserDTO operatorRegistration;
 
     /**
      * Usuário que alterou
      */
     @JsonProperty("operatorChange")
-    public UserDTO operatorChange;
+    private UserDTO operatorChange;
 
     /**
      * Probabilidade de fechamento da oportunidade
      */
     @JsonProperty("probability")
-    public Long probability;
+    private Long probability;
 
     /**
      * Número da proposta no CRM
      */
     @JsonProperty("proposalNumber")
-    public String proposalNumber;
+    private String proposalNumber;
 
     /**
      * Número do pedido no sistema terceiro
      */
     @JsonProperty("orderNumber")
-    public String orderNumber;
+    private String orderNumber;
 
     /**
      * Data da previsão de fechamento da oportunidade
      */
     @JsonProperty("expectedClosingString")
-    public String expectedClosingString;
+    private String expectedClosingString;
 
     /**
      * Data efetiva do fechamento da oportunidade
      */
     @JsonProperty("effectiveClosingString")
-    public String effectiveClosingString;
+    private String effectiveClosingString;
 
     /**
      * Data prevista para a entrega dos produtos
      */
     @JsonProperty("expectedDeliveryString")
-    public String expectedDeliveryString;
+    private String expectedDeliveryString;
 
     /**
      * Valor previsto da oportunidade
      */
     @JsonProperty("expectedValue")
-    public Double expectedValue;
+    private Double expectedValue;
 
     /**
      * Valor fechado da oportunidade
      */
     @JsonProperty("effectiveClosingValue")
-    public Double effectiveClosingValue;
+    private Double effectiveClosingValue;
 
     /**
      * Quantidade prevista para a oportunidade
      */
     @JsonProperty("expectedQuantity")
-    public Double expectedQuantity;
+    private Double expectedQuantity;
 
     /**
      * Quantidade realizada para a oportunidade
      */
     @JsonProperty("achievedQuantity")
-    public Double achievedQuantity;
+    private Double achievedQuantity;
 
     /**
      * Histórico de negociação da oportunidade
      */
     @JsonProperty("history")
-    public String history;
+    private String history;
 
     /**
      * Descrição da oportunidade
      */
     @JsonProperty("description")
-    public String description;
+    private String description;
 
     /**
      * Se notifica por email a criação da oportunidade e demais interações
      */
     @JsonProperty("notifyEmail")
-    public Boolean notifyEmail;
+    private Boolean notifyEmail;
 
     /**
      * Campos customizados
      */
     @JsonProperty("customFields")
-    public String customFields;
+    private String customFields;
 }

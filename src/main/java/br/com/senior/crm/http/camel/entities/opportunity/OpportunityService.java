@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.quarkus.runtime.annotations.RegisterForReflection;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.apache.camel.component.jackson.JacksonDataFormat;
 
@@ -14,6 +15,7 @@ import org.apache.camel.component.jackson.JacksonDataFormat;
  */
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 @RegisterForReflection(serialization = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -25,95 +27,95 @@ public class OpportunityService {
      * Código de identificação no CRM
      */
     @JsonProperty("id")
-    public Long id;
+    private Long id;
 
     /**
      * Oportunidade
      */
     @JsonProperty("opportunity")
-    public OpportunityDTO opportunity;
+    private OpportunityDTO opportunity;
 
     /**
      * Proposta
      */
     @JsonProperty("proposal")
-    public ProposalDTO proposal;
+    private ProposalDTO proposal;
 
     /**
      * Sequencial do produto no pedido
      */
     @JsonProperty("sequenceErp")
-    public Long sequenceErp;
+    private Long sequenceErp;
 
     /**
      * Serviço
      */
     @JsonProperty("service")
-    public ServiceDTO serviceDTO;
+    private ServiceDTO serviceDTO;
 
     /**
      * Quantidade do produto na proposta
      */
     @JsonProperty("quantity")
-    public Double quantity;
+    private Double quantity;
 
     /**
      * Tabela de preço do produto
      */
     @JsonProperty("priceTable")
-    public PriceTableDTO priceTable;
+    private PriceTableDTO priceTable;
 
     /**
      * Cadastro do operador da oportunidade
      */
     @JsonProperty("operatorRegistration")
-    public UserDTO operatorRegistration;
+    private UserDTO operatorRegistration;
 
     /**
      * Usuário que alterou
      */
     @JsonProperty("operatorChange")
-    public UserDTO operatorChange;
+    private UserDTO operatorChange;
 
     /**
      * Valor da vensa do produto na proposta
      */
     @JsonProperty("saleValue")
-    public Double saleValue;
+    private Double saleValue;
 
     /**
      * Valor de desconto do produto
      */
     @JsonProperty("discountValue")
-    public Double discountValue;
+    private Double discountValue;
 
     /**
      * Informativo de exibe o valor do produto na proposta
      */
     @JsonProperty("showValues")
-    public Boolean showValues;
+    private Boolean showValues;
 
     /**
      * Informativo se exibe as fotos do produto na proposta
      */
     @JsonProperty("showPhotos")
-    public Boolean showPhotos;
+    private Boolean showPhotos;
 
     /**
      * Informativo se apresenta os anexos do produto na proposta
      */
     @JsonProperty("showAttachment")
-    public Boolean showAttachment;
+    private Boolean showAttachment;
 
     /**
      * Observações da proposta
      */
     @JsonProperty("note")
-    public String note;
+    private String note;
 
     /**
      * Campos customizados
      */
     @JsonProperty("customFields")
-    public String customFields;
+    private String customFields;
 }

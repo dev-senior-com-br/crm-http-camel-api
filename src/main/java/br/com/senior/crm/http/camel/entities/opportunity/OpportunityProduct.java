@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.quarkus.runtime.annotations.RegisterForReflection;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.apache.camel.component.jackson.JacksonDataFormat;
 
@@ -15,6 +16,7 @@ import org.apache.camel.component.jackson.JacksonDataFormat;
  */
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 @RegisterForReflection(serialization = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,107 +28,107 @@ public class OpportunityProduct {
      * Código de identificação no CRM
      */
     @JsonProperty("id")
-    public Long id;
+    private Long id;
 
     /**
      * Oportunidade
      */
     @JsonProperty("opportunity")
-    public OpportunityDTO opportunity;
+    private OpportunityDTO opportunity;
 
     /**
      * Proposta
      */
     @JsonProperty("proposal")
-    public ProposalDTO proposal;
+    private ProposalDTO proposal;
 
     /**
      * Sequencial do produto no pedido
      */
     @JsonProperty("sequenceErp")
-    public Long sequenceErp;
+    private Long sequenceErp;
 
     /**
      * Produto da proposta
      */
     @JsonProperty("product")
-    public ProductDTO product;
+    private ProductDTO product;
 
     /**
      * Quantidade do produto na proposta
      */
     @JsonProperty("quantity")
-    public Double quantity;
+    private Double quantity;
 
     /**
      * Depósito do produto
      */
     @JsonProperty("deposit")
-    public DepositDTO deposit;
+    private DepositDTO deposit;
 
     /**
      * Tabela de preço do produto
      */
     @JsonProperty("priceTable")
-    public PriceTableDTO priceTable;
+    private PriceTableDTO priceTable;
 
     /**
      * Tipo de venda
      */
     @JsonProperty("saleType")
-    public Long saleType;
+    private Long saleType;
 
     /**
      * Valor da vensa do produto na proposta
      */
     @JsonProperty("saleValue")
-    public Double saleValue;
+    private Double saleValue;
 
     /**
      * Informativo se deve aplicar o valor de correção no valor do produto
      */
     @JsonProperty("applyCorrectionFactor")
-    public Boolean applyCorrectionFactor;
+    private Boolean applyCorrectionFactor;
 
     /**
      * Valor de desconto do produto
      */
     @JsonProperty("discountValue")
-    public Double discountValue;
+    private Double discountValue;
 
     /**
      * Percential de desconto do produto
      */
     @JsonProperty("discountPercentage")
-    public Double discountPercentage;
+    private Double discountPercentage;
 
     /**
      * Informativo de exibe o valor do produto na proposta
      */
     @JsonProperty("showValues")
-    public Boolean showValues;
+    private Boolean showValues;
 
     /**
      * Informativo se exibe as fotos do produto na proposta
      */
     @JsonProperty("showPhotos")
-    public Boolean showPhotos;
+    private Boolean showPhotos;
 
     /**
      * Informativo se apresenta os anexos do produto na proposta
      */
     @JsonProperty("showAttachment")
-    public Boolean showAttachment;
+    private Boolean showAttachment;
 
     /**
      * Observações da proposta
      */
     @JsonProperty("note")
-    public String note;
+    private String note;
 
     /**
      * Campos customizados
      */
     @JsonProperty("customFields")
-    public String customFields;
+    private String customFields;
 }
