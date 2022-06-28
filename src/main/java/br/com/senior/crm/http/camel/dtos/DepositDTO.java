@@ -26,23 +26,23 @@ public class DepositDTO {
      * Código de identificação no CRM
      */
     @JsonProperty("id")
-    public Long id;
+    private Long id;
 
     /**
      * Código de identificação no sistema terceiro
      */
     @JsonProperty("id")
-    public String idErp;
+    private String idErp;
 
     /**
      * Nome do depósito
      */
     @JsonProperty("name")
-    public String name;
+    private String name;
 
     /**
      * Indicativo se o depósito está ativo
      */
     @JsonProperty("active")
-    public Boolean active;
+    private Boolean active;
 }
