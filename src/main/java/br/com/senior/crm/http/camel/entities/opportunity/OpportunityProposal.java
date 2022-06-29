@@ -210,6 +210,30 @@ public class OpportunityProposal {
     private String note;
 
     /**
+     * Centro de custo
+     */
+    @JsonProperty("costCenter")
+    private String costCenter;
+
+    /**
+     * Classificação 1
+     */
+    @JsonProperty("classificationOne")
+    private String classificationOne;
+
+    /**
+     * Classificação 2
+     */
+    @JsonProperty("classificationTwo")
+    private String classificationTwo;
+
+    /**
+     * Classificação 3
+     */
+    @JsonProperty("classificationThree")
+    private String classificationThree;
+
+    /**
      * Campos customizados
      */
     @JsonProperty("customFields")

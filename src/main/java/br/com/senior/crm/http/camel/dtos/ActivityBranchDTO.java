@@ -21,23 +21,23 @@ import org.apache.camel.component.jackson.JacksonDataFormat;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ActivityBranchDTO {
 
-    public static final JacksonDataFormat ACTIVITY_BRANCH_DTO_FORMAT = new JacksonDataFormat(ActivityBranchDTO.class);
+    public static final JacksonDataFormat JACKSON_DATA_FORMAT = new JacksonDataFormat(ActivityBranchDTO.class);
 
     /**
      * Id de identificação
      */
     @JsonProperty("id")
-    public Long id;
+    private Long id;
 
     /**
      * Código de identificação no sistema terceiro
      */
     @JsonProperty("idErp")
-    public String idErp;
+    private String idErp;
 
     /**
      * Nome da Empresa/Filial
      */
     @JsonProperty("name")
-    public String name;
+    private String name;
 }
