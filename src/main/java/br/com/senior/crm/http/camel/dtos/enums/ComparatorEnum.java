@@ -1,4 +1,4 @@
-package br.com.senior.crm.http.camel.utils.enums;
+package br.com.senior.crm.http.camel.dtos.enums;
 
 /**
  * Enum referente aos comparadores
