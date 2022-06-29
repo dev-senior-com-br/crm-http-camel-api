@@ -21,29 +21,29 @@ import org.apache.camel.component.jackson.JacksonDataFormat;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CarrierDTO {
 
-    public static final JacksonDataFormat CARRIER_DTO_FORMAT = new JacksonDataFormat(CarrierDTO.class);
+    public static final JacksonDataFormat JACKSON_DATA_FORMAT = new JacksonDataFormat(CarrierDTO.class);
 
     /**
      * Código de identificação no CRM
      */
     @JsonProperty("id")
-    public Long id;
+    private Long id;
 
     /**
      * Código de identificação no sistema terceiro
      */
     @JsonProperty("idErp")
-    public String idErp;
+    private String idErp;
 
     /**
      * Nome da operadora
      */
     @JsonProperty("name")
-    public String name;
+    private String name;
 
     /**
      * Indicativo se a transportadora está ativa
      */
     @JsonProperty("active")
-    public Boolean active;
+    private Boolean active;
 }
