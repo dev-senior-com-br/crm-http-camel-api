@@ -10,6 +10,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.apache.camel.component.jackson.JacksonDataFormat;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @AllArgsConstructor
@@ -23,5 +24,5 @@ public class OpportunityServiceCollection {
     public static final JacksonDataFormat JACKSON_DATA_FORMAT = new JacksonDataFormat(OpportunityServiceCollection.class);
 
     @JsonProperty("services")
-    private List<OpportunityService> services;
+    private List<OpportunityService> services = new ArrayList<>();
 }
